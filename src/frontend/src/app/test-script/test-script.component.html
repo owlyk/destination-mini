@@ -1,0 +1,36 @@
+@angular/core
+
+<div>
+  <h1>Test Script</h1>
+  
+  <h2>Test Inputs:</h2>
+  <ul>
+    <li *ngFor="let input of testInputs">{{ input }}</li>
+  </ul>
+  
+  <h2>Calculation Endpoints:</h2>
+  <ul>
+    <li><a href="/calculate/fibonacci/endpoint1">Endpoint 1</a></li>
+    <li><a href="/calculate/fibonacci/endpoint2">Endpoint 2</a></li>
+    <li><a href="/calculate/fibonacci/endpoint3">Endpoint 3</a></li>
+  </ul>
+</div>
+
+<style>
+  h1 {
+    color: blue;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: green;
+  }
+</style>

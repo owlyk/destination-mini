@@ -1,0 +1,37 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Calculator</title>
+</head>
+
+<body>
+    <h1>Fibonacci Calculator</h1>
+    <label for="numTerms">Enter the number of Fibonacci terms:</label>
+    <input type="number" id="numTerms" name="numTerms">
+    <button onclick="calculateFibonacci()">Calculate</button>
+    <p id="fibonacciSeries"></p>
+
+    <script>
+        function calculateFibonacci() {
+            const numTerms = document.getElementById('numTerms').value;
+            const fibonacciSeries = generateFibonacci(numTerms);
+            document.getElementById('fibonacciSeries').innerText = `Fibonacci Series: ${fibonacciSeries.join(', ')}`;
+        }
+
+        function generateFibonacci(numTerms) {
+            const fibList = [0, 1];
+            for (let i = 2; i < numTerms; i++) {
+                fibList[i] = fibList[i - 1] + fibList[i - 2];
+            }
+            return fibList.slice(0, numTerms);
+        }
+    </script>
+</body>
+
+</html>
+```

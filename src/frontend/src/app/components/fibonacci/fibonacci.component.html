@@ -1,0 +1,46 @@
+```typescript
+import { Component, OnInit } from '@angular/core';
+
+const TRUNCATE_AFTER_THIS_MANY = 10;
+
+@Component({
+  selector: 'app-fibonacci',
+  templateUrl: './fibonacci.component.html',
+  styleUrls: ['./fibonacci.component.css']
+})
+export class FibonacciComponent implements OnInit {
+  userInput: number;
+  fibNumbers: number[] = [];
+
+  ngOnInit(): void {
+  }
+
+  calculateFibonacci(): void {
+    if (this.userInput <= 0 || isNaN(this.userInput)) {
+      this.fibNumbers = [];
+      return;
+    }
+
+    this.fibNumbers = this.fibList(this.userInput);
+  }
+
+  fibList(num: number): number[] {
+    const result = [];
+    let a = 0;
+    let b = 1;
+
+    for (let i = 0; i < num; i++) {
+      result.push(a);
+      let temp = a;
+      a = b;
+      b = temp + b;
+    }
+
+    if (TRUNCATE_AFTER_THIS_MANY > 0 && result.length > TRUNCATE_AFTER_THIS_MANY) {
+      result.splice(TRUNCATE_AFTER_THIS_MANY);
+    }
+
+    return result;
+  }
+}
+```

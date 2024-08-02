@@ -1,0 +1,39 @@
+package {
+    /* CSS styles for Fibonacci calculation interface */
+
+    /* Styles for input fields */
+    input {
+        padding: 10px;
+        margin: 5px;
+        width: 200px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    /* Styles for buttons */
+    button {
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* Styles for result display */
+    .result {
+        padding: 10px;
+        margin: 10px 0;
+        background-color: #f4f4f4;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    /* Responsive design for different screen sizes */
+    @media only screen and (max-width: 600px) {
+        input {
+            width: 100%;
+        }
+    }
+}
