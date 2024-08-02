@@ -1,0 +1,26 @@
+{
+  "projects": {
+    "angular-app": {
+      "architect": {
+        "build": {
+          "options": {
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": [],
+            "aot": true
+          }
+        },
+        "serve": {
+          "options": {
+            "port": 4200
+          }
+        }
+      }
+    }
+  }
+}

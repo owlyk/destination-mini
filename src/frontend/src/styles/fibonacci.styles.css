@@ -1,0 +1,25 @@
+package frontend.src.styles;
+
+input {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.fibonacci-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fibonacci-input {
+    margin-bottom: 10px;
+}
+
+.fibonacci-series {
+    margin-top: 20px;
+}
+
+.fibonacci-number {
+    margin-right: 5px;
+}

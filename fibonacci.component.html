@@ -1,0 +1,39 @@
+package com.example;
+
+<html>
+<head>
+    <title>Fibonacci Component</title>
+</head>
+<body>
+    <h1>Fibonacci Calculator</h1>
+    <label for="inputNumber">Enter a number:</label>
+    <input type="number" id="inputNumber">
+    <button onclick="calculateFibonacci()">Calculate</button>
+    <ul id="fibonacciList"></ul>
+    <p id="errorMessage" style="color: red;"></p>
+    
+    <script>
+        function calculateFibonacci() {
+            const inputNumber = document.getElementById('inputNumber').value;
+            const fibonacciList = document.getElementById('fibonacciList');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            if (inputNumber <= 0) {
+                errorMessage.textContent = 'Please enter a positive number.';
+                fibonacciList.innerHTML = '';
+            } else {
+                errorMessage.textContent = '';
+                fibonacciList.innerHTML = '';
+                
+                let a = 0, b = 1, nextTerm;
+                for (let i = 1; i <= inputNumber; i++) {
+                    fibonacciList.innerHTML += '<li>' + a + '</li>';
+                    nextTerm = a + b;
+                    a = b;
+                    b = nextTerm;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Calculator</title>
+</head>
+<body>
+    <h1>Fibonacci Calculator</h1>
+    <label for="inputNumber">Enter a number:</label>
+    <input type="number" id="inputNumber" name="inputNumber" min="0" required>
+    <button onclick="calculateFibonacci()">Calculate</button>
+    <p id="fibonacciResult"></p>
+
+    <script>
+        function calculateFibonacci() {
+            const inputNumber = document.getElementById('inputNumber').value;
+            if (inputNumber < 0) {
+                document.getElementById('fibonacciResult').innerText = 'Please enter a positive number.';
+            } else {
+                let fibArray = [0, 1];
+                for (let i = 2; i <= inputNumber; i++) {
+                    fibArray[i] = fibArray[i - 1] + fibArray[i - 2];
+                }
+                document.getElementById('fibonacciResult').innerText = 'Fibonacci sequence: ' + fibArray.join(', ');
+            }
+        }
+    </script>
+</body>
+</html>
+```

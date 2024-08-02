@@ -1,0 +1,46 @@
+@use 'sass:math';
+
+.fibonacci-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-field {
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: blue;
+}
+
+.button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.fibonacci-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.fibonacci-list-item {
+  margin-bottom: 5px;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}

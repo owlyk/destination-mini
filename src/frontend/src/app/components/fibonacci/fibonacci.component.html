@@ -1,0 +1,12 @@
+```html
+<div>
+  <h1>Fibonacci Calculator</h1>
+  <label for="inputNumber">Enter a number:</label>
+  <input type="number" id="inputNumber" name="inputNumber">
+  <button (click)="calculateFibonacci()">Calculate</button>
+  <p *ngIf="fibonacciNumbers.length > 0">Fibonacci Numbers:</p>
+  <ul>
+    <li *ngFor="let number of fibonacciNumbers">{{ number }}</li>
+  </ul>
+</div>
+```

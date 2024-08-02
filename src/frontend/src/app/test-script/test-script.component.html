@@ -1,0 +1,21 @@
+package test-script.component.html
+
+<div class="test-script">
+    <h1>Test Script Display</h1>
+    <div class="test-inputs">
+        <h2>Test Inputs:</h2>
+        <ul>
+            <li *ngFor="let input of testInputs">{{ input }}</li>
+        </ul>
+    </div>
+    <div class="fibonacci-links">
+        <h2>Fibonacci Links:</h2>
+        <ul>
+            <li><a href="/calculate-fibonacci/1">Calculate Fibonacci for 1</a></li>
+            <li><a href="/calculate-fibonacci/2">Calculate Fibonacci for 2</a></li>
+            <li><a href="/calculate-fibonacci/3">Calculate Fibonacci for 3</a></li>
+            <li><a href="/calculate-fibonacci/4">Calculate Fibonacci for 4</a></li>
+            <li><a href="/calculate-fibonacci/5">Calculate Fibonacci for 5</a></li>
+        </ul>
+    </div>
+</div>

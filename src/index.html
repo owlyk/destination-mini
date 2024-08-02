@@ -1,0 +1,38 @@
+package src;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Series Generator</title>
+</head>
+<body>
+    <h1>Fibonacci Series Generator</h1>
+    <form id="fibonacciForm">
+        <label for="numTerms">Enter the number of terms for Fibonacci series:</label>
+        <input type="text" id="numTerms" name="numTerms">
+        <button type="submit">Generate Fibonacci Series</button>
+    </form>
+    <div id="validationMessage"></div>
+    <div id="fibonacciSeries"></div>
+    <script>
+        document.getElementById('fibonacciForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const numTerms = parseInt(document.getElementById('numTerms').value);
+            if (isNaN(numTerms) || numTerms <= 0) {
+                document.getElementById('validationMessage').innerText = 'Please enter a valid number of terms.';
+                document.getElementById('fibonacciSeries').innerText = '';
+            } else {
+                document.getElementById('validationMessage').innerText = 'Input is valid.';
+                const fibonacciSeries = [0, 1];
+                for (let i = 2; i < numTerms; i++) {
+                    fibonacciSeries[i] = fibonacciSeries[i - 1] + fibonacciSeries[i - 2];
+                }
+                document.getElementById('fibonacciSeries').innerText = 'Fibonacci Series: ' + fibonacciSeries.join(', ');
+            }
+        });
+    </script>
+</body>
+</html>
