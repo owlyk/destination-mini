@@ -1,0 +1,29 @@
+package test-script;
+
+<div class="test-script">
+    <h2>Test Script for Fibonacci Calculator</h2>
+    
+    <div class="test-inputs">
+        <h3>Test Inputs:</h3>
+        <ul>
+            <li>Input 1: <input type="text" [(ngModel)]="input1"></li>
+            <li>Input 2: <input type="text" [(ngModel)]="input2"></li>
+        </ul>
+    </div>
+    
+    <div class="calculation-links">
+        <h3>Calculation Links:</h3>
+        <ul>
+            <li><a href="/fibonacci/calculate/{{input1}}">Calculate Fibonacci for Input 1</a></li>
+            <li><a href="/fibonacci/calculate/{{input2}}">Calculate Fibonacci for Input 2</a></li>
+        </ul>
+    </div>
+    
+    <div class="user-experience">
+        <h3>User Experience:</h3>
+        <button (click)="toggleDetails()">Show Details</button>
+        <div *ngIf="showDetails">
+            <p>Click the links above to calculate Fibonacci numbers.</p>
+        </div>
+    </div>
+</div>

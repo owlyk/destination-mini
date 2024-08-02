@@ -1,0 +1,13 @@
+```html
+<div>
+  <h1>Fibonacci Series</h1>
+  <form>
+    <label for="numberInput">Enter the number of Fibonacci numbers to generate:</label>
+    <input type="number" id="numberInput" name="numberInput">
+    <button type="submit">Generate</button>
+  </form>
+  <ul>
+    <li *ngFor="let number of fibonacciNumbers">{{ number }}</li>
+  </ul>
+</div>
+```

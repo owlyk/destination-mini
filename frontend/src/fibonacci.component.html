@@ -1,0 +1,20 @@
+```html
+<div class="container">
+  <h1>Fibonacci Series Generator</h1>
+  <div class="input-group mb-3">
+    <input type="number" class="form-control" placeholder="Enter number of terms" [(ngModel)]="numTerms">
+    <div class="input-group-append">
+      <button class="btn btn-primary" (click)="generateSeries()">Generate Series</button>
+    </div>
+  </div>
+  <div *ngIf="error" class="alert alert-danger" role="alert">
+    {{ error }}
+  </div>
+  <div *ngIf="fibonacciSeries.length > 0">
+    <h3>Generated Fibonacci Series:</h3>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let term of fibonacciSeries">{{ term }}</li>
+    </ul>
+  </div>
+</div>
+```

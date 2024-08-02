@@ -1,0 +1,24 @@
+package frontend.src.app.fib;
+
+<html>
+<head>
+    <title>Fibonacci Calculator</title>
+</head>
+<body>
+    <h1>Fibonacci Calculator</h1>
+    <form action="/fib" method="post">
+        <label for="number">Enter a number:</label>
+        <input type="number" id="number" name="number" required>
+        <button type="submit">Calculate Fibonacci</button>
+    </form>
+    <div>
+        <h2>Calculated Fibonacci Numbers:</h2>
+        <ul>
+            <li *ngFor="let num of fibonacciNumbers">{{ num }}</li>
+        </ul>
+    </div>
+    <div *ngIf="errorMessage">
+        <p>{{ errorMessage }}</p>
+    </div>
+</body>
+</html>

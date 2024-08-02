@@ -1,0 +1,43 @@
+package frontend.src;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Sum Calculator</title>
+</head>
+<body>
+    <h1>Fibonacci Sum Calculator</h1>
+    <label for="inputNumber">Enter a number:</label>
+    <input type="number" id="inputNumber" name="inputNumber">
+    <button onclick="calculateFibonacciSum()">Calculate</button>
+    <p id="result"></p>
+
+    <script>
+        function calculateFibonacciSum() {
+            const inputNumber = document.getElementById("inputNumber").value;
+            if (inputNumber <= 0 || !Number.isInteger(inputNumber)) {
+                alert("Please enter a positive integer.");
+                return;
+            }
+
+            fetch('/calculateFibonacciSum', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ input: inputNumber })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("result").innerText = `Sum of Fibonacci numbers up to ${inputNumber}: ${data.sum}. Calculation successful.`;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>
