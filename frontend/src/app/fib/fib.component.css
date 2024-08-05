@@ -1,0 +1,42 @@
+package fib;
+
+.header {
+    font-size: 2em;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.paragraph {
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin: 10px 20px;
+}
+
+.link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .header {
+        font-size: 1.5em;
+    }
+
+    .paragraph {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        font-size: 1.2em;
+    }
+
+    .paragraph {
+        font-size: 0.9em;
+    }
+}

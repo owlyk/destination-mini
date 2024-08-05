@@ -1,0 +1,17 @@
+package frontend.src.app.test-script;
+
+<div class="test-script-container">
+    <header class="test-script-header">
+        <h1>Test Script View</h1>
+    </header>
+    <section class="test-script-content">
+        <div *ngIf="testScriptData; else loading">
+            <h2>{{ testScriptData.title }}</h2>
+            <p>{{ testScriptData.description }}</p>
+            <pre>{{ testScriptData.script }}</pre>
+        </div>
+        <ng-template #loading>
+            <p>Loading test script...</p>
+        </ng-template>
+    </section>
+</div>

@@ -1,0 +1,69 @@
+package fib-usage;
+
+.fib-usage {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 16px;
+}
+
+.fib-usage h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.fib-usage p {
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .fib-usage {
+        padding: 15px;
+    }
+
+    .fib-usage h1 {
+        font-size: 1.5em;
+    }
+
+    .fib-usage p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fib-usage {
+        padding: 10px;
+    }
+
+    .fib-usage h1 {
+        font-size: 1.2em;
+    }
+
+    .fib-usage p {
+        font-size: 12px;
+    }
+}
+
+.fib-usage a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.fib-usage a:hover {
+    text-decoration: underline;
+}
+
+.fib-usage button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.fib-usage button:hover {
+    background-color: #0056b3;
+}

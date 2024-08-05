@@ -1,15 +1,33 @@
-const prompt = require("prompt-sync")();
-// program to generate fibonacci series up to n terms
+package main
 
-// take input from the user
-const number = parseInt(prompt('Enter the number of terms: '));
-let n1 = 0, n2 = 1, nextTerm;
+import http from 'http';
+import { FibonacciCalculator } from './FibonacciCalculator';
 
-console.log('Fibonacci Series:');
+const port = 3000;
 
-for (let i = 1; i <= number; i++) {
-    console.log(n1);
-    nextTerm = n1 + n2;
-    n1 = n2;
-    n2 = nextTerm;
-}
+const requestHandler = (req, res) => {
+    const url = req.url;
+    const method = req.method;
+
+    if (method === 'GET' && url.startsWith('/fib/')) {
+        const inputValue = url.split('/fib/')[1];
+
+        if (!isNaN(inputValue) && Number.isInteger(+inputValue) && +inputValue >= 0) {
+            const fibNumber = FibonacciCalculator.calculate(+inputValue);
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ input: inputValue, fibonacci: fibNumber }));
+        } else {
+            res.writeHead(400, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: 'Invalid input' }));
+        }
+    } else {
+        res.writeHead(404, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: 'Not found' }));
+    }
+};
+
+const server = http.createServer(requestHandler);
+
+server.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+});
