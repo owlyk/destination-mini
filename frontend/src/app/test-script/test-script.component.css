@@ -1,0 +1,51 @@
+package test_script;
+
+.test-script {
+    margin: 20px;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.test-script h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.test-script p {
+    margin-bottom: 15px;
+}
+
+.test-script button {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.test-script button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .test-script {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .test-script h1 {
+        font-size: 20px;
+    }
+
+    .test-script button {
+        width: 100%;
+    }
+}

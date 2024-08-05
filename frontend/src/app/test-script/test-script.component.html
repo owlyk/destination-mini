@@ -1,0 +1,14 @@
+package test-script;
+
+<div>
+    <header>
+        <h1>Test Script Page</h1>
+    </header>
+    <section>
+        <button (click)="fetchTestScript()">Load Test Script</button>
+        <div *ngIf="testScript">
+            <h2>Test Script Content</h2>
+            <p *ngFor="let line of testScript">{{ line }}</p>
+        </div>
+    </section>
+</div>
