@@ -1,0 +1,27 @@
+```css
+.test-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.test-link {
+    color: blue;
+    text-decoration: none;
+}
+
+.test-link:hover {
+    text-decoration: underline;
+}
+
+.test-script-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+```

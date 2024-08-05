@@ -1,0 +1,19 @@
+package com.example;
+
+<div>
+  <h1>Fibonacci Calculator</h1>
+  <form>
+    <label for="numberInput">Enter a number:</label>
+    <input type="number" id="numberInput" name="numberInput">
+    <button type="submit">Calculate Fibonacci</button>
+  </form>
+  <div *ngIf="fibonacciNumbers.length > 0">
+    <h2>Fibonacci Sequence:</h2>
+    <ul>
+      <li *ngFor="let number of fibonacciNumbers">{{ number }}</li>
+    </ul>
+  </div>
+  <div *ngIf="errorMessage">
+    <p>{{ errorMessage }}</p>
+  </div>
+</div>

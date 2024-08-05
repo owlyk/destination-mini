@@ -1,0 +1,10 @@
+```html
+<div>
+  <h1>Fibonacci Calculator</h1>
+  <label for="numberInput">Enter a number:</label>
+  <input type="number" id="numberInput" name="numberInput">
+  <button (click)="calculateFibonacci()">Calculate Fibonacci</button>
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  <p *ngIf="fibonacciNumbers.length > 0" class="result">Fibonacci Numbers: {{ fibonacciNumbers.join(', ') }}</p>
+</div>
+```

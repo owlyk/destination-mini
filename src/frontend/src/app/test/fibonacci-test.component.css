@@ -1,0 +1,25 @@
+```css
+.test-component {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.test-data {
+    margin-bottom: 10px;
+}
+
+.test-result {
+    font-weight: bold;
+}
+
+.test-pass {
+    color: green;
+}
+
+.test-fail {
+    color: red;
+}
+```
