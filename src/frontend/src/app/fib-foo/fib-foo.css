@@ -1,0 +1,54 @@
+package app.fib-foo;
+
+/* CSS styles for the fib-foo endpoint component */
+
+/* Styles for the user-friendly interface */
+.user-input {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Styles for the test values input */
+.test-input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+/* Styles for the links to specific endpoints */
+.endpoint-link {
+    color: blue;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+/* Styles for the test script */
+.test-script {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Responsive design for different devices */
+@media only screen and (max-width: 600px) {
+    .user-input {
+        margin: 5px;
+        padding: 3px;
+    }
+
+    .test-input {
+        width: 80%;
+        padding: 3px;
+        margin-bottom: 5px;
+    }
+
+    .endpoint-link {
+        margin-right: 5px;
+    }
+
+    .test-script {
+        font-size: 12px;
+        margin-top: 5px;
+    }
+}

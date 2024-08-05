@@ -1,0 +1,21 @@
+```html
+<div class="container">
+  <h1>Fibonacci Numbers</h1>
+  <form (ngSubmit)="calculateFibonacci()" #fibonacciForm="ngForm">
+    <div class="form-group">
+      <label for="inputNumber">Enter a number:</label>
+      <input type="number" id="inputNumber" name="inputNumber" class="form-control" required [(ngModel)]="inputNumber" #inputNumber="ngModel">
+    </div>
+    <button type="submit" class="btn btn-primary">Calculate Fibonacci</button>
+  </form>
+  <div *ngIf="fibonacciNumbers.length > 0">
+    <h2>Fibonacci Numbers:</h2>
+    <ul>
+      <li *ngFor="let number of fibonacciNumbers">{{ number }}</li>
+    </ul>
+  </div>
+  <div *ngIf="message">
+    <p>{{ message }}</p>
+  </div>
+</div>
+```

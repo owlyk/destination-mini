@@ -1,0 +1,18 @@
+@angular/core
+
+<div>
+  <h1>Fibonacci Calculator</h1>
+  
+  <p>Enter a number to calculate the Fibonacci sequence:</p>
+  <input type="number" [(ngModel)]="inputNumber">
+  <button (click)="calculateFibonacci()">Calculate</button>
+  
+  <p *ngIf="result">Fibonacci sequence for {{inputNumber}}: {{result}}</p>
+  
+  <p>Test Inputs:</p>
+  <ul>
+    <li><a href="/api/fibonacci?n=5">Calculate Fibonacci for n=5</a></li>
+    <li><a href="/api/fibonacci?n=10">Calculate Fibonacci for n=10</a></li>
+    <li><a href="/api/fibonacci?n=15">Calculate Fibonacci for n=15</a></li>
+  </ul>
+</div>

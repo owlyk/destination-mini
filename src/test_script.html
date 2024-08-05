@@ -1,0 +1,26 @@
+package com.example.test;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
+public class FibonacciTest {
+
+    @Test
+    public void testFibonacciSequence() {
+        FibonacciCalculator calculator = new FibonacciCalculator();
+        
+        assertArrayEquals(new int[]{0}, calculator.calculateFibonacciSequence(0));
+        assertArrayEquals(new int[]{0, 1, 1, 2, 3, 5, 8, 13, 21, 34}, calculator.calculateFibonacciSequence(10));
+        assertArrayEquals(new int[]{0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377}, calculator.calculateFibonacciSequence(15));
+    }
+
+    @Test
+    public void testFibonacciValue() {
+        FibonacciCalculator calculator = new FibonacciCalculator();
+        
+        assertEquals(0, calculator.calculateFibonacciValue(0));
+        assertEquals(55, calculator.calculateFibonacciValue(10));
+        assertEquals(233, calculator.calculateFibonacciValue(13));
+    }
+}

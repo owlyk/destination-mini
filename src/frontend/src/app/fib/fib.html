@@ -1,0 +1,22 @@
+package src.frontend.src.app.fib;
+
+<html>
+<head>
+    <title>Fibonacci Calculator</title>
+    <style>
+        /* Add CSS styling here */
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Fibonacci Calculator!</h1>
+    
+    <p>Enter a number below to generate the Fibonacci sequence:</p>
+    
+    <input type="number" [(ngModel)]="inputNumber">
+    <button (click)="calculateFibonacci()">Calculate</button>
+    
+    <p *ngIf="fibonacciSequence">Fibonacci Sequence: {{ fibonacciSequence }}</p>
+    
+    <p>Endpoint URL: /fib/{{ inputNumber }}</p>
+</body>
+</html>

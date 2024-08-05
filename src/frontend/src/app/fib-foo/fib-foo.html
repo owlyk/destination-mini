@@ -1,0 +1,15 @@
+```html
+<div class="fib-foo">
+    <h1>Fibonacci Calculator</h1>
+    <p>Enter test values below to calculate Fibonacci numbers:</p>
+    <input type="number" placeholder="Enter test value" [(ngModel)]="testValue">
+    <button (click)="calculateFibonacci()">Calculate</button>
+    <p *ngIf="result">Result: {{ result }}</p>
+    <p>Test Inputs:</p>
+    <ul>
+        <li *ngFor="let input of testInputs">
+            <a [routerLink]="['/fib', input]">Test {{ input }}</a>
+        </li>
+    </ul>
+</div>
+```

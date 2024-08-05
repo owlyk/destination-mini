@@ -1,0 +1,53 @@
+package src.frontend.src.components.fibonacci;
+
+<html>
+<head>
+    <title>Fibonacci Calculation</title>
+    <style>
+        .fibonacci-container {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .input-field {
+            margin-bottom: 10px;
+        }
+        .fibonacci-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .fibonacci-item {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="fibonacci-container">
+        <h2>Fibonacci Calculation</h2>
+        <div class="input-field">
+            <label for="inputNumber">Enter a number:</label>
+            <input type="number" id="inputNumber" name="inputNumber">
+        </div>
+        <button onclick="calculateFibonacci()">Calculate Fibonacci</button>
+        <ul class="fibonacci-list" id="fibonacciList"></ul>
+    </div>
+    <script>
+        function calculateFibonacci() {
+            const inputNumber = document.getElementById('inputNumber').value;
+            const fibonacciList = document.getElementById('fibonacciList');
+            fibonacciList.innerHTML = '';
+            let a = 0, b = 1, next;
+            for (let i = 0; i < inputNumber; i++) {
+                const listItem = document.createElement('li');
+                listItem.classList.add('fibonacci-item');
+                listItem.textContent = a;
+                fibonacciList.appendChild(listItem);
+                next = a + b;
+                a = b;
+                b = next;
+            }
+        }
+    </script>
+</body>
+</html>

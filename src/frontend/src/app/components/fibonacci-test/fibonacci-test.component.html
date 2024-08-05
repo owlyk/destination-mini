@@ -1,0 +1,11 @@
+@angular/core
+
+<div class="fibonacci-test">
+  <h2>Fibonacci Test Inputs</h2>
+  <ul>
+    <li *ngFor="let testInput of testInputs">
+      <span>{{ testInput.description }}</span>
+      <a [routerLink]="['/fibonacci', testInput.id]">Endpoint Link</a>
+    </li>
+  </ul>
+</div>

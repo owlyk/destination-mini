@@ -1,0 +1,28 @@
+package frontend.src;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Calculator</title>
+</head>
+<body>
+    <input type="number" id="inputValue" placeholder="Enter a number">
+    <button onclick="calculateFibonacci()">Calculate Fibonacci</button>
+    <p id="result"></p>
+
+    <script>
+        function calculateFibonacci() {
+            const inputValue = document.getElementById('inputValue').value;
+            fetch(`/calculateFibonacci/${inputValue}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('result').innerText = data.join(', ');
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>

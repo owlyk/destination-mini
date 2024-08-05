@@ -1,0 +1,24 @@
+```html
+<div class="fibonacci-container">
+    <h1>Welcome to Fibonacci Calculator</h1>
+    <p>Please enter a number to calculate its Fibonacci value.</p>
+    
+    <div class="input-container">
+        <label for="inputNumber">Enter a number:</label>
+        <input type="number" id="inputNumber" [(ngModel)]="inputNumber">
+    </div>
+    
+    <button (click)="calculateFibonacci()">Calculate Fibonacci</button>
+    
+    <div class="result-container">
+        <p *ngIf="result !== null">The Fibonacci value for {{ inputNumber }} is {{ result }}</p>
+    </div>
+    
+    <div class="example-container">
+        <h2>Examples:</h2>
+        <p>For input 5, the Fibonacci value is 5.</p>
+        <p>For input 8, the Fibonacci value is 21.</p>
+        <p>For input 10, the Fibonacci value is 55.</p>
+    </div>
+</div>
+```

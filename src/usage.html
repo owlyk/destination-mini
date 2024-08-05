@@ -1,0 +1,29 @@
+package src;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fibonacci Calculator</title>
+</head>
+<body>
+    <h1>Welcome to the Fibonacci Calculator!</h1>
+    <p>Please enter a number to calculate the Fibonacci sequence:</p>
+    <input type="text" id="inputNumber">
+    <button onclick="calculateFibonacci()">Calculate</button>
+    <p id="result"></p>
+
+    <script>
+        function calculateFibonacci() {
+            let inputNumber = document.getElementById("inputNumber").value;
+            fetch(`/calculate/${inputNumber}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("result").innerText = `Fibonacci Sequence: ${data.sequence.join(', ')}`;
+                })
+                .catch(error => {
+                    document.getElementById("result").innerText = "Error calculating Fibonacci sequence.";
+                });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+package frontend.src.app.fib;
+
+/* CSS styles for Fibonacci calculator view */
+
+/* Define styles for the Fibonacci calculator container */
+.fib-container {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Define styles for the Fibonacci calculator title */
+.fib-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Define styles for the Fibonacci calculator input */
+.fib-input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Define styles for the Fibonacci calculator button */
+.fib-button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Define styles for the Fibonacci calculator result */
+.fib-result {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}

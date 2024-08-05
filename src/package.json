@@ -1,0 +1,10 @@
+{
+  "name": "fibonacci-api",
+  "version": "1.0.0",
+  "description": "API for calculating Fibonacci numbers",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "prompt-sync": "^4.1.0"
+  }
+}
