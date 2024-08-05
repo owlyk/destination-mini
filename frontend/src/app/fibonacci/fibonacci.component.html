@@ -1,0 +1,21 @@
+package frontend.src.app.fibonacci;
+
+<form (ngSubmit)="onSubmit()" #fibonacciForm="ngForm">
+    <div>
+        <label for="argument">Enter a positive integer:</label>
+        <input type="text" id="argument" name="argument" ngModel required>
+    </div>
+    <button type="submit" [disabled]="fibonacciForm.invalid">Calculate</button>
+</form>
+
+<div *ngIf="errorMessage">
+    <p>{{ errorMessage }}</p>
+</div>
+
+<div *ngIf="fibonacciNumbers.length > 0">
+    <h3>Fibonacci Numbers:</h3>
+    <ul>
+        <li *ngFor="let number of fibonacciNumbers">{{ number }}</li>
+    </ul>
+    <p *ngIf="isTruncated">Input was truncated.</p>
+</div>

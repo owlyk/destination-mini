@@ -1,0 +1,30 @@
+package frontend.src;
+
+<div>
+    <h1>Fibonacci Calculator</h1>
+    <input type="number" id="fibonacciInput" placeholder="Enter a number" />
+    <button onclick="onCalculate()">Calculate</button>
+    <div id="result"></div>
+</div>
+
+<script>
+    function onCalculate() {
+        const input = document.getElementById('fibonacciInput').value;
+        const resultDiv = document.getElementById('result');
+        const number = parseInt(input);
+
+        if (isNaN(number) || number < 0) {
+            resultDiv.innerHTML = JSON.stringify({ error: "Please enter a valid non-negative integer." });
+            return;
+        }
+
+        const fibonacciNumber = calculateFibonacci(number);
+        resultDiv.innerHTML = JSON.stringify({ fibonacci: fibonacciNumber });
+    }
+
+    function calculateFibonacci(n) {
+        if (n === 0) return 0;
+        if (n === 1) return 1;
+        return calculateFibonacci(n - 1) + calculateFibonacci(n - 2);
+    }
+</script>

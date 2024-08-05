@@ -1,0 +1,12 @@
+package frontend.src.app;
+
+<form (ngSubmit)="onSubmit()" #fibonacciForm="ngForm">
+  <input type="text" name="inputValue" [(ngModel)]="inputValue" required />
+  <button type="submit">Submit</button>
+</form>
+<div *ngIf="resultMessage">
+  {{ resultMessage }}
+</div>
+<div *ngIf="errorMessage" style="color: red;">
+  {{ errorMessage }}
+</div>
