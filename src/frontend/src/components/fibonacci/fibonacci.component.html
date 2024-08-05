@@ -1,0 +1,11 @@
+```html
+<div>
+  <label for="numberInput">Enter a number:</label>
+  <input type="number" id="numberInput" [(ngModel)]="inputNumber">
+  <button (click)="generateFibonacci()">Generate Fibonacci Series</button>
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  <ul *ngIf="fibonacciSeries.length > 0">
+    <li *ngFor="let num of fibonacciSeries">{{ num }}</li>
+  </ul>
+</div>
+```

@@ -1,0 +1,11 @@
+package src.frontend.src.app.components.fibonacci-test;
+
+<div>
+  <h1>Fibonacci Test Cases</h1>
+  <ul>
+    <li *ngFor="let testCase of testCases">
+      <p>{{testCase.description}}</p>
+      <a [routerLink]="['/fibonacci', testCase.input]">Test {{testCase.input}} Fibonacci numbers</a>
+    </li>
+  </ul>
+</div>

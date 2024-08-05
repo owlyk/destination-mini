@@ -1,0 +1,32 @@
+package frontend.src;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Calculator</title>
+</head>
+<body>
+    <h1>Fibonacci Calculator</h1>
+    <form id="fibonacciForm">
+        <label for="numberInput">Enter a number:</label>
+        <input type="number" id="numberInput" name="numberInput" required>
+        <button type="submit">Calculate Fibonacci</button>
+    </form>
+    <div id="result"></div>
+    <script>
+        document.getElementById('fibonacciForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const number = document.getElementById('numberInput').value;
+            fetch(`/api/fibonacci/${number}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('result').innerText = `Fibonacci of ${number} is ${data.result}`;
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+package src.frontend.src.app.components.fibonacci;
+
+<div>
+  <label for="fibonacciNumber">Enter the number of Fibonacci numbers to calculate:</label>
+  <input type="number" id="fibonacciNumber" [(ngModel)]="numberOfFibonacciNumbers">
+  <button (click)="calculateFibonacci()">Calculate</button>
+</div>
+
+<div *ngIf="fibonacciSequence.length > 0">
+  <h3>Fibonacci Sequence:</h3>
+  <ul>
+    <li *ngFor="let number of fibonacciSequence">{{ number }}</li>
+  </ul>
+</div>

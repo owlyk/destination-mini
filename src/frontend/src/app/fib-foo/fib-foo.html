@@ -1,0 +1,24 @@
+package src.frontend.src.app.fib-foo;
+
+<html>
+<head>
+    <title>Fibonacci Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Welcome to Fibonacci Calculator</h1>
+    
+    <p>Enter a number to calculate its Fibonacci value:</p>
+    <input type="number" id="inputNumber" placeholder="Enter a number">
+    <button (click)="calculateFibonacci()">Calculate Fibonacci</button>
+    
+    <p>Test Inputs:</p>
+    <ul>
+        <li>Test Input 1: <a href="/fib/1">Calculate Fibonacci for 1</a></li>
+        <li>Test Input 2: <a href="/fib/2">Calculate Fibonacci for 2</a></li>
+        <li>Test Input 3: <a href="/fib/3">Calculate Fibonacci for 3</a></li>
+        <li>Test Input 4: <a href="/fib/4">Calculate Fibonacci for 4</a></li>
+        <li>Test Input 5: <a href="/fib/5">Calculate Fibonacci for 5</a></li>
+    </ul>
+</body>
+</html>

@@ -1,14 +1,24 @@
 {
-  "name": "owlyk",
+  "name": "angular-project",
   "version": "1.0.0",
-  "description": "Find a fibonaccio sequence number",
-  "main": "src/main.js",
+  "description": "Angular project with Flask integration",
   "scripts": {
-    "start": "node src/main.js"
+    "start": "ng serve"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "prompt-sync": "^4.2.0"
+    "@angular/common": "^12.0.0",
+    "@angular/core": "^12.0.0",
+    "@angular/forms": "^12.0.0",
+    "@angular/platform-browser": "^12.0.0",
+    "@angular/platform-browser-dynamic": "^12.0.0",
+    "rxjs": "^6.6.0",
+    "zone.js": "^0.11.4"
+  },
+  "devDependencies": {
+    "@angular/cli": "^12.0.0",
+    "@angular/compiler-cli": "^12.0.0",
+    "@angular/language-service": "^12.0.0",
+    "@types/node": "^12.11.1",
+    "typescript": "^4.2.4"
   }
 }

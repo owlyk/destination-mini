@@ -1,0 +1,35 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Usage Examples</title>
+</head>
+<body>
+    <h1>Fibonacci Calculation Feature Usage</h1>
+    
+    <h2>Example 1: Calculating Fibonacci Number</h2>
+    <p>To calculate the nth Fibonacci number, make a GET request to the following endpoint:</p>
+    <code>/fibonacci?n=5</code>
+    <p>This will return the 5th Fibonacci number.</p>
+    
+    <h2>Example 2: Displaying Fibonacci Sequence</h2>
+    <p>To display the first n Fibonacci numbers, make a GET request to the following endpoint:</p>
+    <code>/fibonacci-sequence?n=8</code>
+    <p>This will return the first 8 Fibonacci numbers in a sequence.</p>
+    
+    <h2>Example 3: Fibonacci Number in HTML Template</h2>
+    <p>You can also embed the Fibonacci number directly in an HTML template using Flask:</p>
+    <pre>
+        &lt;html&gt;
+        &lt;head&gt;
+            &lt;title&gt;Fibonacci Number&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;h1&gt;Fibonacci Number: {{ fibonacci_number }}&lt;/h1&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+    </pre>
+    <p>Make sure to render the template using Flask's <code>render_template</code> function.</p>
+</body>
+</html>
+```

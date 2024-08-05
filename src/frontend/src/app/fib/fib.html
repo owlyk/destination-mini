@@ -1,0 +1,23 @@
+package src.frontend.src.app.fib;
+
+<html>
+<head>
+    <title>Fibonacci Calculator</title>
+</head>
+<body>
+    <h1>Fibonacci Calculator</h1>
+    <p>Enter a number to calculate the Fibonacci sequence:</p>
+    <input type="number" [(ngModel)]="inputNumber">
+    <button (click)="calculateFibonacci()">Calculate</button>
+    
+    <h2>Test Inputs:</h2>
+    <ul>
+        <li><a href="#" (click)="calculateFibonacci(5)">Calculate Fibonacci(5)</a></li>
+        <li><a href="#" (click)="calculateFibonacci(10)">Calculate Fibonacci(10)</a></li>
+        <li><a href="#" (click)="calculateFibonacci(15)">Calculate Fibonacci(15)</a></li>
+    </ul>
+    
+    <h2>Instructions:</h2>
+    <p>Enter a number in the input field above and click "Calculate" to see the Fibonacci sequence.</p>
+</body>
+</html>
