@@ -1,15 +1,24 @@
-const prompt = require("prompt-sync")();
-// program to generate fibonacci series up to n terms
+package main;
 
-// take input from the user
-const number = parseInt(prompt('Enter the number of terms: '));
-let n1 = 0, n2 = 1, nextTerm;
+import promptSync from 'prompt-sync';
+import { validateInput } from './ValidateInput.js';
 
-console.log('Fibonacci Series:');
+const prompt = promptSync();
 
-for (let i = 1; i <= number; i++) {
-    console.log(n1);
-    nextTerm = n1 + n2;
-    n1 = n2;
-    n2 = nextTerm;
+function main() {
+    let continueInput = true;
+
+    while (continueInput) {
+        const userInput = prompt('Enter a positive integer (or type "exit" to quit): ');
+
+        if (userInput.toLowerCase() === 'exit') {
+            continueInput = false;
+            break;
+        }
+
+        const validationResult = validateInput(userInput);
+        console.log(validationResult.message);
+    }
 }
+
+main();
