@@ -1,0 +1,37 @@
+package frontend.src;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truncate Fibonacci</title>
+</head>
+<body>
+    <form id="truncateForm">
+        <label for="fibonacciNumbers">Fibonacci Numbers:</label>
+        <input type="text" id="fibonacciNumbers" name="fibonacciNumbers" required><br><br>
+        <label for="truncationLimit">Truncation Limit:</label>
+        <input type="number" id="truncationLimit" name="truncationLimit" required><br><br>
+        <button type="submit">Truncate Fibonacci</button>
+    </form>
+    <div id="result"></div>
+    <script>
+        document.getElementById('truncateForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const fibonacciNumbers = document.getElementById('fibonacciNumbers').value;
+            const truncationLimit = document.getElementById('truncationLimit').value;
+            const response = await fetch('/truncateFibonacci', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ fibonacciNumbers, truncationLimit })
+            });
+            const data = await response.json();
+            document.getElementById('result').innerText = `Truncated Fibonacci Numbers: ${data.truncatedNumbers}. ${data.message}`;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+package src.frontend.src.app.components.fibonacci.fibonacci.component.html
+
+<h1>Fibonacci Series</h1>
+<ul>
+  <li><a href="#" (click)="getFibonacci(5)">Get Fibonacci Series for 5 numbers</a></li>
+  <li><a href="#" (click)="getFibonacci(10)">Get Fibonacci Series for 10 numbers</a></li>
+  <li><a href="#" (click)="getFibonacci(15)">Get Fibonacci Series for 15 numbers</a></li>
+</ul>
+
+<div *ngIf="fibonacciSeries">
+  <h2>Fibonacci Series:</h2>
+  <ul>
+    <li *ngFor="let number of fibonacciSeries">{{ number }}</li>
+  </ul>
+</div>
