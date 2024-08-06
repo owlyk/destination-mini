@@ -1,15 +1,26 @@
-const prompt = require("prompt-sync")();
-// program to generate fibonacci series up to n terms
+const prompt = require('prompt-sync')();
 
-// take input from the user
-const number = parseInt(prompt('Enter the number of terms: '));
-let n1 = 0, n2 = 1, nextTerm;
+function fibonacciDetails() {
+    const number = parseInt(prompt('Enter a number to calculate its Fibonacci details: '));
 
-console.log('Fibonacci Series:');
+    if (isNaN(number) || number < 0) {
+        return { error: 'Invalid input. Please enter a valid number.' };
+    }
 
-for (let i = 1; i <= number; i++) {
-    console.log(n1);
-    nextTerm = n1 + n2;
-    n1 = n2;
-    n2 = nextTerm;
+    let a = 0, b = 1, temp;
+    let fibonacci = [0, 1];
+
+    for (let i = 2; i <= number; i++) {
+        temp = a + b;
+        a = b;
+        b = temp;
+        fibonacci.push(temp);
+    }
+
+    const position = fibonacci.indexOf(b);
+    const isPrime = b > 1 && Array.from({ length: b - 1 }, (_, i) => i + 2).every(i => b % i !== 0);
+
+    return { fibonacci: b, position: position, prime: isPrime };
 }
+
+module.exports = fibonacciDetails;

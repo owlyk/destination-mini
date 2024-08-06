@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 50px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input {
+            padding: 5px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fibonacci Calculator</h1>
+    <form id="fibonacciForm">
+        <input type="number" id="fibonacciNumber" placeholder="Enter Fibonacci Number" required>
+        <button type="submit">Calculate Fibonacci</button>
+    </form>
+    <div id="result"></div>
+    <script>
+        const form = document.getElementById('fibonacciForm');
+        const resultDiv = document.getElementById('result');
+
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const number = document.getElementById('fibonacciNumber').value;
+            const response = await fetch(`/calculateFibonacci?number=${number}`);
+            const data = await response.json();
+            resultDiv.innerHTML = `
+                <p>Fibonacci Number: ${data.fibonacci}</p>
+                <p>Position in Sequence: ${data.position}</p>
+                <p>Is Prime Number: ${data.isPrime}</p>
+            `;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+package src;
+
+/target/
+/build/
+/.idea/
+*.log

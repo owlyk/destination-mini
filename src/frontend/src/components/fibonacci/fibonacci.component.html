@@ -1,0 +1,45 @@
+package src.frontend.src.components.fibonacci;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Series</title>
+</head>
+<body>
+    <h1>Fibonacci Series</h1>
+    <p>Click the links below to generate Fibonacci series:</p>
+    <a href="#" id="fibonacci-5">Generate Fibonacci Series for 5</a>
+    <a href="#" id="fibonacci-10">Generate Fibonacci Series for 10</a>
+    <a href="#" id="fibonacci-15">Generate Fibonacci Series for 15</a>
+    <div id="fibonacci-result"></div>
+
+    <script>
+        document.getElementById('fibonacci-5').addEventListener('click', function() {
+            fetch('/api/fibonacci?n=5')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('fibonacci-result').innerText = data.join(', ');
+                });
+        });
+
+        document.getElementById('fibonacci-10').addEventListener('click', function() {
+            fetch('/api/fibonacci?n=10')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('fibonacci-result').innerText = data.join(', ');
+                });
+        });
+
+        document.getElementById('fibonacci-15').addEventListener('click', function() {
+            fetch('/api/fibonacci?n=15')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('fibonacci-result').innerText = data.join(', ');
+                });
+        });
+    </script>
+</body>
+</html>

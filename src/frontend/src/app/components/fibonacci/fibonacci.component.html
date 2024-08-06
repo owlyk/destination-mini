@@ -1,0 +1,26 @@
+package src.frontend.src.app.components.fibonacci;
+
+<html>
+<head>
+    <title>Fibonacci Endpoint</title>
+</head>
+<body>
+    <h1>Test Script</h1>
+    <ul>
+        <li>Test Input 1 - <a href="#">Link 1</a></li>
+        <li>Test Input 2 - <a href="#">Link 2</a></li>
+        <li>Test Input 3 - <a href="#">Link 3</a></li>
+    </ul>
+    <div>
+        <p *ngIf="error">Invalid input. Please enter a valid number.</p>
+        <input type="text" [(ngModel)]="inputNumber">
+        <button (click)="generateFibonacci()">Generate Fibonacci Series</button>
+    </div>
+    <div *ngIf="fibonacciSeries">
+        <p>Fibonacci Series:</p>
+        <ul>
+            <li *ngFor="let number of fibonacciSeries">{{ number }}</li>
+        </ul>
+    </div>
+</body>
+</html>

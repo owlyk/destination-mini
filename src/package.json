@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "prompt-sync": "^4.1.2"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "install": "npm install"
+  }
+}
