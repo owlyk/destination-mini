@@ -1,0 +1,34 @@
+package frontend.src.app.test-script;
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Test Script</title>
+</head>
+
+<body>
+    <h1>Welcome to the Fibonacci Test Script</h1>
+    <p>Choose the number of Fibonacci numbers you want to calculate:</p>
+    <ul>
+        <li><a href="#" (click)="fibList(5)">Calculate first 5 Fibonacci numbers</a></li>
+        <li><a href="#" (click)="fibList(10)">Calculate first 10 Fibonacci numbers</a></li>
+        <li><a href="#" (click)="fibList(15)">Calculate first 15 Fibonacci numbers</a></li>
+    </ul>
+
+    <h2>Instructions:</h2>
+    <p>Click on the links above to calculate the specified number of Fibonacci numbers.</p>
+    <p>The Fibonacci numbers will be displayed below with a message.</p>
+
+    <div *ngFor="let fibNum of fibonacciNumbers">
+        <p>{{ fibNum.message }}</p>
+        <ul>
+            <li *ngFor="let num of fibNum.numbers">{{ num }}</li>
+        </ul>
+    </div>
+</body>
+
+</html>

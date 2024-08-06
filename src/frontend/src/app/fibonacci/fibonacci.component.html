@@ -1,0 +1,27 @@
+package frontend.src.app.fibonacci;
+
+<html>
+<head>
+    <title>Fibonacci Numbers Calculator Test Script</title>
+</head>
+<body>
+    <h1>Fibonacci Numbers Calculator Test Script</h1>
+    <p>Use the links below to test different scenarios for the Fibonacci Numbers calculator:</p>
+    <ul>
+        <li><a href="#" (click)="generateFibonacci(0)">Test 0 Fibonacci Numbers</a></li>
+        <li><a href="#" (click)="generateFibonacci(1)">Test 1 Fibonacci Number</a></li>
+        <li><a href="#" (click)="generateFibonacci(2)">Test 2 Fibonacci Numbers</a></li>
+        <li><a href="#" (click)="generateFibonacci('scientific')">Test Scientific Notation Input</a></li>
+        <li><a href="#" (click)="generateFibonacci('large')">Test Large Number Input</a></li>
+        <li><a href="#" (click)="generateFibonacci(-1)">Test Negative Number Input</a></li>
+        <li><a href="#" (click)="generateFibonacci('word')">Test Word Input</a></li>
+    </ul>
+    <div *ngIf="error" class="error-message">{{ error }}</div>
+    <div *ngIf="fibonacciSeries" class="fibonacci-series">
+        <p>Generated Fibonacci Series:</p>
+        <ul>
+            <li *ngFor="let number of fibonacciSeries">{{ number }}</li>
+        </ul>
+    </div>
+</body>
+</html>

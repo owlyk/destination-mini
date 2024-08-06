@@ -1,0 +1,33 @@
+package frontend.src;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Series Generator</title>
+</head>
+<body>
+    <h1>Fibonacci Series Generator</h1>
+    <label for="numInput">Enter the number of Fibonacci numbers to generate:</label>
+    <input type="number" id="numInput" name="numInput">
+    <button onclick="generateFibonacci()">Generate</button>
+    <p id="fibonacciSeries"></p>
+
+    <script>
+        function generateFibonacci() {
+            const num = document.getElementById("numInput").value;
+            fetch(`/generateFibonacci?num=${num}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("fibonacciSeries").innerText = `Generated Fibonacci series: ${data.message}`;
+                })
+                .catch(error => {
+                    console.error("Error generating Fibonacci series:", error);
+                    document.getElementById("fibonacciSeries").innerText = "Error generating Fibonacci series. Please try again.";
+                });
+        }
+    </script>
+</body>
+</html>
