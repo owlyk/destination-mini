@@ -1,0 +1,27 @@
+```html
+<html>
+<head>
+  <title>Fibonacci Numbers Calculator</title>
+</head>
+<body>
+  <h1>Tests for Fibonacci Numbers calculator</h1>
+  <p>Test inputs:</p>
+  <ul>
+    <li><a href="#" (click)="getFibonacci(0)">0</a></li>
+    <li><a href="#" (click)="getFibonacci(1)">1</a></li>
+    <li><a href="#" (click)="getFibonacci(2)">2</a></li>
+    <li><a href="#" (click)="getFibonacci(1e6)">Scientific Notation</a></li>
+    <li><a href="#" (click)="getFibonacci(1000000)">Large Number</a></li>
+    <li><a href="#" (click)="getFibonacci(-5)">Negative Number</a></li>
+    <li><a href="#" (click)="getFibonacci('word')">Word</a></li>
+  </ul>
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+  <div *ngIf="fibonacciSeries" class="fibonacci-series">
+    <p>Fibonacci Series:</p>
+    <ul>
+      <li *ngFor="let num of fibonacciSeries">{{ num }}</li>
+    </ul>
+  </div>
+</body>
+</html>
+```

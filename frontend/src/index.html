@@ -1,0 +1,50 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fibonacci Number Generator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    input {
+        padding: 5px;
+        margin: 10px;
+    }
+    button {
+        padding: 5px 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    #fibonacci-list {
+        margin: 20px;
+    }
+</style>
+</head>
+<body>
+<h1>Fibonacci Number Generator</h1>
+<input type="number" id="input-number" placeholder="Enter a number">
+<button onclick="generateFibonacciList()">Generate Fibonacci Series</button>
+<div id="fibonacci-list"></div>
+<script>
+    function generateFibonacciList() {
+        const inputNumber = document.getElementById('input-number').value;
+        let a = 0, b = 1, nextTerm;
+        let fibonacciSeries = '';
+        for (let i = 1; i <= inputNumber; i++) {
+            fibonacciSeries += a + ', ';
+            nextTerm = a + b;
+            a = b;
+            b = nextTerm;
+        }
+        document.getElementById('fibonacci-list').innerText = fibonacciSeries;
+    }
+</script>
+</body>
+</html>
+```

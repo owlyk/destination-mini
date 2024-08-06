@@ -1,0 +1,9 @@
+{
+  "name": "migration-project",
+  "version": "1.0.0",
+  "description": "Migration project to new technology stack",
+  "main": "index.js",
+  "dependencies": {
+    "prompt-sync": "4.1.4"
+  }
+}

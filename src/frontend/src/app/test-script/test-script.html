@@ -1,0 +1,24 @@
+package frontend.src.app.test-script;
+
+<html>
+<head>
+    <title>Test Script Page</title>
+</head>
+<body>
+    <h1>Welcome to the Fibonacci Number Calculator Test Script</h1>
+    <p>Click on the links below to calculate different numbers of Fibonacci numbers:</p>
+    <ul>
+        <li><a href="#" ng-click="fibList(5)">Calculate first 5 Fibonacci numbers</a></li>
+        <li><a href="#" ng-click="fibList(10)">Calculate first 10 Fibonacci numbers</a></li>
+        <li><a href="#" ng-click="fibList(15)">Calculate first 15 Fibonacci numbers</a></li>
+    </ul>
+    <p>Instructions:</p>
+    <p>Enter the number of Fibonacci numbers you want to calculate and click on the corresponding link above.</p>
+    <p>Example:</p>
+    <p>If you want to calculate the first 5 Fibonacci numbers, click on "Calculate first 5 Fibonacci numbers".</p>
+    <p>The Fibonacci numbers will be displayed below:</p>
+    <ul>
+        <li ng-repeat="number in fibonacciNumbers">{{ number }}</li>
+    </ul>
+</body>
+</html>

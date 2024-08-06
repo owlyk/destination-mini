@@ -1,0 +1,11 @@
+@angular/core
+
+<div>
+  <h2>Fibonacci Series</h2>
+  <label for="numTerms">Enter number of terms:</label>
+  <input type="number" id="numTerms" [(ngModel)]="numTerms">
+  <button (click)="calculateFibonacciSeries()">Generate</button>
+  <ul>
+    <li *ngFor="let num of fibonacciSeries">{{ num }}</li>
+  </ul>
+</div>

@@ -1,15 +1,18 @@
-const prompt = require("prompt-sync")();
-// program to generate fibonacci series up to n terms
+const prompt = require('prompt-sync')();
 
-// take input from the user
-const number = parseInt(prompt('Enter the number of terms: '));
-let n1 = 0, n2 = 1, nextTerm;
+function generateFibonacciList() {
+    const n = parseInt(prompt('Enter the number of terms in the Fibonacci series: '));
 
-console.log('Fibonacci Series:');
+    if (isNaN(n) || n <= 0) {
+        return { error: 'Invalid input. Please enter a positive integer.' };
+    }
 
-for (let i = 1; i <= number; i++) {
-    console.log(n1);
-    nextTerm = n1 + n2;
-    n1 = n2;
-    n2 = nextTerm;
+    let fib = [0, 1];
+    for (let i = 2; i < n; i++) {
+        fib[i] = fib[i - 1] + fib[i - 2];
+    }
+
+    return { fibonacciSeries: fib.slice(0, n), message: 'Fibonacci series generated successfully.' };
 }
+
+module.exports = generateFibonacciList;

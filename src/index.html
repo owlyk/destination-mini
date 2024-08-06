@@ -1,0 +1,26 @@
+package main;
+
+<html>
+<head>
+    <title>Fibonacci Input Validation</title>
+</head>
+<body>
+    <form id="inputForm">
+        <label for="numberInput">Enter a number:</label>
+        <input type="number" id="numberInput" name="numberInput">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script src="main.js"></script>
+    <script>
+        document.getElementById('inputForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const userInput = document.getElementById('numberInput').value;
+            const validationResult = validateInput(userInput);
+            const resultElement = document.createElement('p');
+            resultElement.textContent = JSON.stringify(validationResult);
+            document.body.appendChild(resultElement);
+        });
+    </script>
+</body>
+</html>

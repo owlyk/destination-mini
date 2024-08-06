@@ -1,0 +1,40 @@
+package src.frontend.src.components;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Component</title>
+</head>
+<body>
+    <h1>Fibonacci Series Generator</h1>
+    <label for="numTerms">Enter the number of terms:</label>
+    <input type="number" id="numTerms" name="numTerms">
+    <button onclick="generateFibonacci()">Generate Fibonacci Series</button>
+    <div id="fibonacciSeries"></div>
+    <a href="#" onclick="requestFibonacci(5)">Generate 5 Fibonacci Numbers</a>
+    <a href="#" onclick="requestFibonacci(10)">Generate 10 Fibonacci Numbers</a>
+    <a href="#" onclick="requestFibonacci(15)">Generate 15 Fibonacci Numbers</a>
+
+    <script>
+        function generateFibonacci() {
+            const numTerms = document.getElementById("numTerms").value;
+            let fibonacciSeries = [0, 1];
+            for (let i = 2; i < numTerms; i++) {
+                fibonacciSeries[i] = fibonacciSeries[i - 1] + fibonacciSeries[i - 2];
+            }
+            document.getElementById("fibonacciSeries").innerText = fibonacciSeries.join(", ");
+        }
+
+        function requestFibonacci(num) {
+            let fibonacciSeries = [0, 1];
+            for (let i = 2; i < num; i++) {
+                fibonacciSeries[i] = fibonacciSeries[i - 1] + fibonacciSeries[i - 2];
+            }
+            alert(`Fibonacci Series with ${num} terms: ${fibonacciSeries.join(", ")}`);
+        }
+    </script>
+</body>
+</html>
