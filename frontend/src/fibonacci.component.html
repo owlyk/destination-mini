@@ -1,0 +1,7 @@
+package frontend.src;
+
+<div>
+    <input type="text" [(ngModel)]="inputValue" placeholder="Enter a number" />
+    <button (click)="calculateFibonacci()">Calculate Fibonacci</button>
+    <div *ngIf="result">{{ result }}</div>
+</div>

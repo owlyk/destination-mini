@@ -1,0 +1,25 @@
+package frontend.src.app.fibonacci;
+
+<form (ngSubmit)="calculateFibonacci()" #fibonacciForm="ngForm">
+    <div>
+        <label for="terms">Enter number of Fibonacci terms:</label>
+        <input type="number" id="terms" name="terms" [(ngModel)]="terms" required min="1" #termsInput="ngModel">
+        <div *ngIf="termsInput.invalid && (termsInput.dirty || termsInput.touched)">
+            <div *ngIf="termsInput.errors?.required">This field is required.</div>
+            <div *ngIf="termsInput.errors?.min">Please enter a positive number.</div>
+        </div>
+    </div>
+    <button type="submit" [disabled]="fibonacciForm.invalid">Calculate</button>
+</form>
+
+<div *ngIf="fibonacciNumbers.length > 0">
+    <h3>Fibonacci Numbers:</h3>
+    <ul>
+        <li *ngFor="let number of fibonacciNumbers">{{ number }}</li>
+    </ul>
+</div>
+
+<div *ngIf="errorMessage">
+    <h3>Error:</h3>
+    <p>{{ errorMessage }}</p>
+</div>
