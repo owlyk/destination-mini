@@ -1,0 +1,26 @@
+package src.frontend.src.app.fibonacci;
+
+<html>
+<head>
+    <title>Fibonacci Numbers Calculator</title>
+</head>
+<body>
+    <h1>Tests for Fibonacci Numbers calculator</h1>
+    <p>Test inputs: 0, 1, 2, scientific notation, a really large number, a negative number, a word</p>
+    <ul>
+        <li><a href="#" (click)="getFibonacci(0)">0</a></li>
+        <li><a href="#" (click)="getFibonacci(1)">1</a></li>
+        <li><a href="#" (click)="getFibonacci(2)">2</a></li>
+        <li><a href="#" (click)="getFibonacci(1e6)">Scientific Notation</a></li>
+        <li><a href="#" (click)="getFibonacci(1000000)">Large Number</a></li>
+        <li><a href="#" (click)="getFibonacci(-1)">Negative Number</a></li>
+        <li><a href="#" (click)="getFibonacci('word')">Word</a></li>
+    </ul>
+    <div *ngIf="fibonacciSeries">
+        <p *ngFor="let num of fibonacciSeries">{{ num }}</p>
+    </div>
+    <div *ngIf="errorMessage">
+        <p>{{ errorMessage }}</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+package frontend.src;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Series Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="number"] {
+            padding: 5px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fibonacci Series Generator</h1>
+    <form id="fibonacciForm">
+        <label for="numTerms">Enter the number of terms:</label>
+        <input type="number" id="numTerms" name="numTerms" min="1" required>
+        <button type="submit">Generate Fibonacci Series</button>
+    </form>
+    <div id="result"></div>
+    <script>
+        const form = document.getElementById('fibonacciForm');
+        const resultDiv = document.getElementById('result');
+
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const numTerms = document.getElementById('numTerms').value;
+            const response = await fetch(`/api/fibonacci?numTerms=${numTerms}`);
+            const data = await response.json();
+            resultDiv.innerHTML = `Fibonacci Series: ${data.fibonacciNumbers.join(', ')}`;
+        });
+    </script>
+</body>
+</html>

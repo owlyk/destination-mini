@@ -1,0 +1,5 @@
+package src;
+
+/target/
+/build/
+/node_modules/
