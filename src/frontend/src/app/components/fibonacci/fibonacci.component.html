@@ -1,0 +1,29 @@
+package src.frontend.src.app.components.fibonacci;
+
+<html>
+<head>
+    <title>Fibonacci Series</title>
+</head>
+<body>
+    <h1>Fibonacci Series Generator</h1>
+    <label for="numTerms">Enter number of terms:</label>
+    <input type="number" id="numTerms" name="numTerms">
+    <button onclick="generateFibonacci()">Generate</button>
+    <div id="fibonacciSeries"></div>
+    <div id="error"></div>
+
+    <script>
+        function generateFibonacci() {
+            const numTerms = document.getElementById("numTerms").value;
+            fetch(`/api/fibonacci?numTerms=${numTerms}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("fibonacciSeries").innerText = data.join(", ");
+                })
+                .catch(error => {
+                    document.getElementById("error").innerText = "Error fetching Fibonacci series. Please try again.";
+                });
+        }
+    </script>
+</body>
+</html>

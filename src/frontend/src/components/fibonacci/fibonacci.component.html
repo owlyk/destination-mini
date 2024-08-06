@@ -1,0 +1,11 @@
+package src.frontend.src.components.fibonacci.fibonacci.component.html
+
+<h1>Fibonacci Component</h1>
+<div>
+    <label for="inputNumber">Enter a number:</label>
+    <input type="number" id="inputNumber" [(ngModel)]="inputNumber">
+    <button (click)="calculateFibonacci()">Calculate</button>
+</div>
+<div *ngIf="result !== null">
+    <p>Fibonacci of {{inputNumber}} is {{result}}</p>
+</div>

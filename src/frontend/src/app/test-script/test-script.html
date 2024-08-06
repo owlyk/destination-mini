@@ -1,0 +1,48 @@
+package frontend.src.app.test-script;
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Calculator Test Script</title>
+</head>
+
+<body>
+    <h1>Welcome to the Fibonacci Calculator Test Script</h1>
+    <p>Please click on the links below to calculate Fibonacci numbers:</p>
+    <ul>
+        <li><a href="#" ng-click="calculateFibonacci(5)">Calculate Fibonacci(5)</a></li>
+        <li><a href="#" ng-click="calculateFibonacci(10)">Calculate Fibonacci(10)</a></li>
+        <li><a href="#" ng-click="calculateFibonacci(15)">Calculate Fibonacci(15)</a></li>
+    </ul>
+
+    <h2>Instructions:</h2>
+    <p>Click on the links above to calculate the Fibonacci number for the specified input. The result will be displayed below.</p>
+
+    <h2>Examples:</h2>
+    <p>For example, clicking on "Calculate Fibonacci(5)" will display the 5th Fibonacci number.</p>
+
+    <h2>Result:</h2>
+    <p>{{ fibonacciResult }}</p>
+
+    <script src="angular.min.js"></script>
+    <script>
+        var app = angular.module('fibonacciApp', []);
+        app.controller('fibonacciController', function($scope) {
+            $scope.calculateFibonacci = function(n) {
+                var a = 0, b = 1, temp;
+                for (var i = 0; i < n; i++) {
+                    temp = a;
+                    a = b;
+                    b = temp + b;
+                }
+                $scope.fibonacciResult = a;
+            };
+        });
+    </script>
+</body>
+
+</html>
