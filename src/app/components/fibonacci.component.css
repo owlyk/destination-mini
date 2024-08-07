@@ -1,0 +1,53 @@
+package app.components;
+
+.fibonacci-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.fibonacci-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.fibonacci-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.fibonacci-button:hover {
+    background-color: #0056b3;
+}
+
+.fibonacci-output {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .fibonacci-container {
+        padding: 10px;
+    }
+
+    .fibonacci-input, .fibonacci-button {
+        font-size: 14px;
+    }
+}

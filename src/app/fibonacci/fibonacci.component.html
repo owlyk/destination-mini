@@ -1,0 +1,13 @@
+package app.fibonacci;
+
+<div>
+    <h1>Fibonacci Sequence Calculator</h1>
+    <input type="number" [(ngModel)]="inputNumber" placeholder="Enter a positive integer" />
+    <button (click)="calculateFibonacci()">Calculate</button>
+    <div *ngIf="msg">{{ msg }}</div>
+    <div *ngIf="fibonacciNumbers.length > 0">
+        <h2>Fibonacci Numbers:</h2>
+        <p>{{ fibonacciNumbers.join(', ') }}</p>
+    </div>
+    <div *ngIf="errorMessage">{{ errorMessage }}</div>
+</div>

@@ -1,0 +1,14 @@
+package app.components;
+
+<form (ngSubmit)="generateFibonacci()">
+    <input type="number" [(ngModel)]="inputNumber" name="inputNumber" required>
+    <button type="submit">Generate</button>
+</form>
+
+<div *ngIf="message">{{ message }}</div>
+
+<ul>
+    <li *ngFor="let number of fibNumbers">{{ number }}</li>
+</ul>
+
+<a href="usage.html">Usage Instructions</a>

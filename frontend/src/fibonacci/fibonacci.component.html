@@ -1,0 +1,19 @@
+package fibonacci;
+
+<div class="fibonacci-container">
+    <form (ngSubmit)="generateFibonacci()">
+        <label for="num">Enter a number:</label>
+        <input type="number" id="num" [(ngModel)]="num" name="num" required>
+        <button type="submit">Generate Fibonacci</button>
+    </form>
+    <div *ngIf="successMessage" class="success-message">
+        {{ successMessage }}
+    </div>
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+    </div>
+    <div *ngIf="fibonacciSequence.length > 0">
+        <h3>Fibonacci Sequence:</h3>
+        <p>{{ fibonacciSequence.join(', ') }}</p>
+    </div>
+</div>
