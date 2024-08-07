@@ -1,0 +1,60 @@
+package src;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Test Script</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="number"] {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            max-width: 300px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #results {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fibonacci Test Script</h1>
+    <p>Enter the number of terms you wish to validate in the Fibonacci sequence.</p>
+    <input type="number" id="terms" placeholder="Number of terms" min="1">
+    <button id="submit">Submit</button>
+    <div id="results"></div>
+    <script>
+        document.getElementById('submit').addEventListener('click', function() {
+            const terms = document.getElementById('terms').value;
+            let fib = [0, 1];
+            for (let i = 2; i < terms; i++) {
+                fib[i] = fib[i - 1] + fib[i - 2];
+            }
+            document.getElementById('results').innerText = fib.slice(0, terms).join(', ');
+        });
+    </script>
+</body>
+</html>
