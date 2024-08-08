@@ -1,15 +1,45 @@
-const prompt = require("prompt-sync")();
-// program to generate fibonacci series up to n terms
+package main;
 
-// take input from the user
-const number = parseInt(prompt('Enter the number of terms: '));
-let n1 = 0, n2 = 1, nextTerm;
+import express from 'express';
+import promptSync from 'prompt-sync';
+import { validateInput } from './InputValidator.js';
+import { calculateFibonacci } from './FibonacciCalculator.js';
 
-console.log('Fibonacci Series:');
+const app = express();
+const port = 3000;
+const prompt = promptSync();
 
-for (let i = 1; i <= number; i++) {
-    console.log(n1);
-    nextTerm = n1 + n2;
-    n1 = n2;
-    n2 = nextTerm;
+app.get('/fib/:input', (req, res) => {
+    const input = req.params.input;
+    const validationResult = validateInput(input);
+    
+    if (validationResult.isValid) {
+        const result = calculateFibonacci(validationResult.validInput);
+        res.send(`Fibonacci of ${validationResult.validInput} is ${result}`);
+    } else {
+        res.send(`Error: ${validationResult.errorMessage}`);
+    }
+});
+
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+});
+
+function startPrompt() {
+    while (true) {
+        const userInput = prompt('Enter a non-negative integer for Fibonacci calculation (or type "exit" to quit): ');
+        if (userInput.toLowerCase() === 'exit') {
+            break;
+        }
+        const validationResult = validateInput(userInput);
+        
+        if (validationResult.isValid) {
+            const result = calculateFibonacci(validationResult.validInput);
+            console.log(`Fibonacci of ${validationResult.validInput} is ${result}`);
+        } else {
+            console.log(`Error: ${validationResult.errorMessage}`);
+        }
+    }
 }
+
+startPrompt();
