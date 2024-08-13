@@ -1,15 +1,25 @@
-const prompt = require("prompt-sync")();
-// program to generate fibonacci series up to n terms
+package main;
 
-// take input from the user
-const number = parseInt(prompt('Enter the number of terms: '));
-let n1 = 0, n2 = 1, nextTerm;
+import promptSync from 'prompt-sync';
+import { FibonacciCalculator } from './FibonacciCalculator';
+import { ErrorMessages } from './ErrorMessages';
 
-console.log('Fibonacci Series:');
+const prompt = promptSync();
 
-for (let i = 1; i <= number; i++) {
-    console.log(n1);
-    nextTerm = n1 + n2;
-    n1 = n2;
-    n2 = nextTerm;
+function isValidInput(input) {
+    const regex = /^(0|[1-9]\d*)(e[+-]?\d+)?$/;
+    return regex.test(input);
 }
+
+function main() {
+    const input = prompt('Enter a Fibonacci number: ');
+    if (!isValidInput(input)) {
+        console.log(ErrorMessages.invalidInput);
+        return;
+    }
+    const n = Number(input);
+    const result = FibonacciCalculator.computeFibonacci(n);
+    console.log(`Fibonacci number for ${n} is ${result}`);
+}
+
+main();
