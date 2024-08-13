@@ -1,0 +1,13 @@
+package app;
+
+<div>
+    <input [(ngModel)]="inputValue" type="text" placeholder="Enter a number" />
+    <button (click)="onCalculate()">Calculate</button>
+    <div *ngIf="message">{{ message }}</div>
+    <div *ngIf="fibonacciNumbers.length > 0">
+        <p>Fibonacci Numbers:</p>
+        <ul>
+            <li *ngFor="let number of fibonacciNumbers">{{ number }}</li>
+        </ul>
+    </div>
+</div>

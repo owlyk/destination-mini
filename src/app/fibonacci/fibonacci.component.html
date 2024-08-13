@@ -1,0 +1,26 @@
+package app.fibonacci;
+
+<input type="number" [(ngModel)]="inputValue" placeholder="Enter a number" />
+<button (click)="calculateFibonacci()">Calculate Fibonacci</button>
+<div *ngIf="fibonacciResult !== undefined">
+    <p>Fibonacci Result: {{ fibonacciResult }}</p>
+</div>
+<div *ngIf="errorMessage">
+    <p class="error">{{ errorMessage }}</p>
+</div>
+
+<style>
+    input {
+        margin: 10px 0;
+        padding: 8px;
+        width: 200px;
+    }
+    button {
+        padding: 8px 12px;
+        cursor: pointer;
+    }
+    .error {
+        color: red;
+        font-weight: bold;
+    }
+</style>

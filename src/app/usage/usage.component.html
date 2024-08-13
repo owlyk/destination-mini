@@ -1,0 +1,13 @@
+package app.usage;
+
+<h1>Welcome to the Fibonacci Application</h1>
+<div>
+    <div id="dynamic-message">{{ msg }}</div>
+    <h2>Instructions</h2>
+    <p>{{ instructions }}</p>
+    <h2>Valid URL Examples</h2>
+    <ul>
+        <li *ngFor="let example of examples">{{ example }}</li>
+    </ul>
+    <a href="../test_script.html">Additional Test Cases</a>
+</div>

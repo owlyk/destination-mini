@@ -1,0 +1,7 @@
+package src.app.fib-foo;
+
+<form (ngSubmit)="validateInput()">
+    <input type="text" [(ngModel)]="userInput" name="inputField" required>
+    <button type="submit">Submit</button>
+</form>
+<div *ngIf="errorMessage">{{ errorMessage }}</div>

@@ -1,0 +1,11 @@
+package app.components.fibonacci;
+
+<div>
+    <h1>Fibonacci Result</h1>
+    <div *ngIf="errorMessage; else resultTemplate">
+        <p class="error">{{ errorMessage }}</p>
+    </div>
+    <ng-template #resultTemplate>
+        <p>The Fibonacci result is: {{ fibonacciResult }}</p>
+    </ng-template>
+</div>
