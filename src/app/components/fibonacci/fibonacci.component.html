@@ -1,0 +1,5 @@
+package app.components.fibonacci;
+
+<button (click)="fetchFibonacci()">Fetch Fibonacci</button>
+<div *ngIf="result !== null">{{ result }}</div>
+<div *ngIf="errorMessage">{{ errorMessage }}</div>

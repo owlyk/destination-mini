@@ -1,0 +1,10 @@
+package fibonacci;
+
+<div>
+    <input type="number" [(ngModel)]="inputNumber" placeholder="Enter a number" />
+    <button (click)="getFibonacci()">Calculate</button>
+</div>
+<div *ngIf="result !== null">
+    <p *ngIf="errorMessage">{{ errorMessage }}</p>
+    <p *ngIf="!errorMessage">Fibonacci Sequence: {{ result }}</p>
+</div>
