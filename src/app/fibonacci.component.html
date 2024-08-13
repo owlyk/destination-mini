@@ -1,0 +1,6 @@
+package src.app;
+
+<input type="number" [(ngModel)]="inputValue" placeholder="Enter a number" />
+<button (click)="calculateFibonacci()">Calculate</button>
+<div *ngIf="result !== null">{{ result }}</div>
+<div *ngIf="errorMessage !== null" class="error">{{ errorMessage }}</div>

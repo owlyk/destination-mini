@@ -1,0 +1,46 @@
+package fibonacci;
+
+.fibonacci-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.fibonacci-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.fibonacci-input {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.fibonacci-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.fibonacci-button:hover {
+    background-color: #45a049;
+}
+
+.fibonacci-result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #555;
+}

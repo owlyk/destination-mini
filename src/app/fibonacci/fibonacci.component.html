@@ -1,0 +1,11 @@
+package src.app.fibonacci;
+
+<form [formGroup]="fibonacciForm" (ngSubmit)="onSubmit()">
+  <input type="number" formControlName="inputNumber" placeholder="Enter a number" />
+  <button type="submit" [disabled]="fibonacciForm.invalid">Calculate</button>
+</form>
+
+<div *ngIf="result !== null">
+  <p *ngIf="errorMessage">{{ errorMessage }}</p>
+  <p *ngIf="!errorMessage">Fibonacci Result: {{ result }}</p>
+</div>
