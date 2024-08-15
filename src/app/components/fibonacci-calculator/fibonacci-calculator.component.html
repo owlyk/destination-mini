@@ -1,0 +1,24 @@
+package app.components.fibonacci-calculator;
+
+<form [formGroup]="fibonacciForm" (ngSubmit)="calculateFibonacci()">
+  <div>
+    <label for="terms">Number of Fibonacci Terms:</label>
+    <input id="terms" formControlName="terms" type="number" />
+    <div *ngIf="fibonacciForm.get('terms').invalid && (fibonacciForm.get('terms').touched || fibonacciForm.get('terms').dirty)">
+      <div *ngIf="fibonacciForm.get('terms').errors.required">This field is required.</div>
+      <div *ngIf="fibonacciForm.get('terms').errors.pattern">Invalid input. Please enter a valid number.</div>
+      <div *ngIf="fibonacciForm.get('terms').errors.negative">Negative numbers are not allowed.</div>
+    </div>
+  </div>
+  <button type="submit" [disabled]="fibonacciForm.invalid">Calculate</button>
+</form>
+
+<div *ngIf="fibonacciSequence">
+  <h3>Fibonacci Sequence:</h3>
+  <p>{{ fibonacciSequence }}</p>
+</div>
+
+<div *ngIf="errorMessage">
+  <h3>Error:</h3>
+  <p>{{ errorMessage }}</p>
+</div>

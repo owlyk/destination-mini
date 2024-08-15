@@ -1,0 +1,31 @@
+package fibonacci;
+
+<div class="fibonacci-container">
+    <h1>Fibonacci Calculator</h1>
+    <input type="number" [(ngModel)]="inputValue" placeholder="Enter a number" aria-label="Fibonacci input" />
+    <button (click)="calculateFibonacci()" aria-label="Calculate Fibonacci">Calculate</button>
+    <div *ngIf="result !== null" class="result">
+        <p *ngIf="errorMessage">{{ errorMessage }}</p>
+        <p *ngIf="!errorMessage">Fibonacci Number: {{ result }}</p>
+    </div>
+</div>
+
+<style>
+    .fibonacci-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+    }
+    input {
+        margin-bottom: 10px;
+        padding: 8px;
+        width: 200px;
+    }
+    button {
+        padding: 8px 16px;
+    }
+    .result {
+        margin-top: 20px;
+    }
+</style>
