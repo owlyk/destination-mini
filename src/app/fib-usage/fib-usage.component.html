@@ -1,0 +1,27 @@
+package app.fib_usage;
+
+<h1>Fibonacci Usage Instructions</h1>
+
+<h2>Acceptable Input Formats</h2>
+<p>The Fibonacci function accepts the following input formats:</p>
+<ul>
+    <li>Integers (e.g., 0, 1, 2, 3)</li>
+    <li>Scientific notation (e.g., 1e3 for 1000)</li>
+</ul>
+
+<h2>Edge Case Handling</h2>
+<p>When using the Fibonacci function, please note the following edge cases:</p>
+<ul>
+    <li>Negative numbers are not accepted and will result in an error.</li>
+    <li>Input of zero will return the first Fibonacci number, which is 0.</li>
+</ul>
+
+<h2>Output Format</h2>
+<p>The output will display the Fibonacci numbers up to the specified input value. For example:</p>
+<ul>
+    <li>If the input is 5, the output will be: 0, 1, 1, 2, 3, 5</li>
+    <li>If the input is 10, the output will be: 0, 1, 1, 2, 3, 5, 8</li>
+</ul>
+
+<h2>Error Handling</h2>
+<p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>

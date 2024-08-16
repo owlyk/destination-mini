@@ -1,0 +1,57 @@
+package src.assets;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usage Instructions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #555;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+        .instruction {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px dashed #ccc;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Input Validation Error</h1>
+    <p class="error">Your input is invalid. Please follow the instructions below to enter valid input.</p>
+    <div class="instruction">
+        <h2>Instructions:</h2>
+        <ul>
+            <li>Ensure all required fields are filled out.</li>
+            <li>Check that your input matches the expected format (e.g., email, phone number).</li>
+            <li>Do not use special characters unless specified.</li>
+            <li>If you are unsure about the input format, refer to the examples provided.</li>
+        </ul>
+    </div>
+    <div class="instruction">
+        <h2>Common Error Messages:</h2>
+        <ul>
+            <li><span class="error">Email format is incorrect.</span> Please enter a valid email address.</li>
+            <li><span class="error">Phone number must be 10 digits.</span> Please enter a valid phone number.</li>
+            <li><span class="error">Field cannot be empty.</span> Please fill out this field.</li>
+        </ul>
+    </div>
+</body>
+</html>

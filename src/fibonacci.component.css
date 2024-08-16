@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #f1f1f1;
+    --text-color: #333;
+    --border-radius: 5px;
+    --padding: 10px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--secondary-color);
+    margin: 0;
+    padding: 20px;
+}
+
+.fibonacci-container {
+    max-width: 600px;
+    margin: auto;
+    padding: var(--padding);
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: var(--padding);
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 100%;
+    padding: var(--padding);
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: darken(var(--primary-color), 10%);
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: var(--text-color);
+    border: 1px solid var(--primary-color);
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    background-color: #f9f9f9;
+}
+
+@media (max-width: 600px) {
+    .fibonacci-container {
+        padding: 15px;
+    }
+
+    input[type="number"], button {
+        font-size: 14px;
+    }
+
+    .result {
+        font-size: 16px;
+    }
+}

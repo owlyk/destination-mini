@@ -1,0 +1,39 @@
+package fibonacci;
+
+input {
+    margin: 10px 0;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.response {
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 18px;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: auto;
+}
+
+@media (max-width: 600px) {
+    input {
+        font-size: 14px;
+    }
+
+    .response {
+        font-size: 16px;
+    }
+}

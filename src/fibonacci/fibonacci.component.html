@@ -1,0 +1,6 @@
+package src.fibonacci;
+
+<input type="text" [(ngModel)]="inputValue" />
+<button (click)="calculateFibonacci()">Calculate</button>
+<div *ngIf="fibonacciSequence">{{ fibonacciSequence }}</div>
+<div *ngIf="errorMessage">{{ errorMessage }}</div>
