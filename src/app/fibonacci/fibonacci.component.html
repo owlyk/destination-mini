@@ -1,0 +1,8 @@
+package src.app.fibonacci;
+
+<input type="number" [(ngModel)]="inputValue" placeholder="Enter a positive integer" min="1" />
+<button (click)="calculateFibonacci()" [disabled]="!inputValue || inputValue <= 0">Submit</button>
+<div *ngIf="message">{{ message }}</div>
+<ul>
+  <li *ngFor="let number of fibNumbers">{{ number }}</li>
+</ul>

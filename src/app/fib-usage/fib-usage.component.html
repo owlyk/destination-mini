@@ -1,0 +1,39 @@
+package src.app.fib-usage;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Calculator Instructions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Fibonacci Calculator Instructions</h1>
+        <section>
+            <h2>Acceptable Input Formats</h2>
+            <p>Input can be provided in the following formats:</p>
+            <ul>
+                <li>Integers (e.g., 5)</li>
+                <li>Scientific notation (e.g., 1e3 for 1000)</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Constraints on Input Values</h2>
+            <p>The input must adhere to the following constraints:</p>
+            <ul>
+                <li>Must be a positive integer.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Maximum Limit for Fibonacci Calculations</h2>
+            <p>The Fibonacci sequence will be truncated after 10,000 numbers.</p>
+        </section>
+        <section *ngIf="message">
+            <h2>Error Messages</h2>
+            <p class="error">{{ message }}</p>
+        </section>
+    </div>
+</body>
+</html>

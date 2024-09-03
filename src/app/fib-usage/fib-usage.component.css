@@ -1,0 +1,51 @@
+package src.app.fib-usage;
+
+.fib-usage {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.fib-usage h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.fib-usage p {
+    font-size: 16px;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .fib-usage {
+        padding: 12px;
+        margin: 12px;
+    }
+
+    .fib-usage h1 {
+        font-size: 20px;
+    }
+
+    .fib-usage p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fib-usage {
+        padding: 8px;
+        margin: 8px;
+    }
+
+    .fib-usage h1 {
+        font-size: 18px;
+    }
+
+    .fib-usage p {
+        font-size: 12px;
+    }
+}
