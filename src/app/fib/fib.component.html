@@ -1,0 +1,12 @@
+package app.fib;
+
+<form (ngSubmit)="validateInput()" #fibForm="ngForm">
+    <div>
+        <label for="fibonacciInput">Enter a number:</label>
+        <input type="number" id="fibonacciInput" [(ngModel)]="inputValue" name="fibonacciInput" required>
+    </div>
+    <button type="submit" [disabled]="!fibForm.valid">Submit</button>
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+    </div>
+</form>

@@ -1,0 +1,50 @@
+package fibonacci;
+
+.fibonacci-container {
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.fibonacci-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.fibonacci-button {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.fibonacci-button:hover {
+    background-color: #0056b3;
+}
+
+.fibonacci-result {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+.error-message {
+    color: #d8000c;
+    font-weight: bold;
+    margin-top: 10px;
+    background-color: #ffb3b3;
+    border: 1px solid #d8000c;
+    padding: 10px;
+    border-radius: 4px;
+    display: block;
+    font-size: 16px;
+}

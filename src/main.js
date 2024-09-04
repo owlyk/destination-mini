@@ -1,15 +1,42 @@
-const prompt = require("prompt-sync")();
-// program to generate fibonacci series up to n terms
+package main;
 
-// take input from the user
-const number = parseInt(prompt('Enter the number of terms: '));
-let n1 = 0, n2 = 1, nextTerm;
+const express = require('express');
+const bodyParser = require('body-parser');
+const winston = require('winston');
 
-console.log('Fibonacci Series:');
+const app = express();
+const port = 3000;
 
-for (let i = 1; i <= number; i++) {
-    console.log(n1);
-    nextTerm = n1 + n2;
-    n1 = n2;
-    n2 = nextTerm;
-}
+app.use(bodyParser.json());
+
+const logger = winston.createLogger({
+    level: 'info',
+    format: winston.format.json(),
+    transports: [
+        new winston.transports.Console(),
+    ],
+});
+
+const fibonacci = (n) => {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+};
+
+app.get('/fib/:input_value', (req, res) => {
+    const inputValue = req.params.input_value;
+
+    if (!/^\d+$/.test(inputValue) || parseInt(inputValue) < 0) {
+        const errorResponse = {
+            message: 'Invalid input. Please provide a valid integer.'
+        };
+        logger.error(`Invalid request: ${inputValue}`);
+        return res.status(400).json(errorResponse);
+    }
+
+    const result = fibonacci(parseInt(inputValue));
+    res.json({ result });
+});
+
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+});

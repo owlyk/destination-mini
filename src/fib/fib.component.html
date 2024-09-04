@@ -1,0 +1,28 @@
+package src.fib;
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-fib',
+  templateUrl: './fib.component.html',
+  styleUrls: ['./fib.component.css']
+})
+export class FibComponent {
+  title = 'Fibonacci Calculator';
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">Start Page</h1>
+    <p class="text-center">Hello! Would you like to calculate</p>
+    <a class="btn btn-primary" href="./fib">Fibonacci numbers</a>
+  </div>
+</body>
+</html>

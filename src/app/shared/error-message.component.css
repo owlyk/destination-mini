@@ -1,0 +1,26 @@
+package app.shared;
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.error-message.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.error-message::before {
+    content: "⚠️";
+    margin-right: 8px;
+}
