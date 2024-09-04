@@ -1,0 +1,41 @@
+package app;
+
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { FibonacciComponent } from './fibonacci/fibonacci.component';
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <div>
+      <h1>Fibonacci Calculator</h1>
+      <label for="numberInput">Enter a number:</label>
+      <input id="numberInput" type="number" [(ngModel)]="inputNumber" (ngModelChange)="validateInput()" />
+      <button (click)="calculateFibonacci()" [disabled]="!isValidInput">Calculate</button>
+      <div *ngIf="result !== undefined">
+        <h2>Fibonacci Result: {{ result }}</h2>
+      </div>
+      <FibonacciComponent [inputNumber]="inputNumber" (result)="result = $event"></FibonacciComponent>
+    </div>
+  `
+})
+export class AppComponent {
+  inputNumber: number;
+  result: number;
+  isValidInput: boolean = true;
+
+  validateInput() {
+    this.isValidInput = this.inputNumber >= 0;
+  }
+
+  calculateFibonacci() {
+    if (this.isValidInput) {
+      this.result = this.fibonacci(this.inputNumber);
+    }
+  }
+
+  fibonacci(n: number): number {
+    if (n <= 1) return n;
+    return this.fibonacci(n - 1) + this.fibonacci(n - 2);
+  }
+}

@@ -1,0 +1,25 @@
+package src.app.fib;
+
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-fib',
+  templateUrl: './fib.component.html'
+})
+export class FibComponent {
+  inputValue: number;
+  errorMessage: string;
+
+  checkFibonacciInput() {
+    if (this.isValidInput(this.inputValue)) {
+      // Call backend service to check Fibonacci
+    } else {
+      this.errorMessage = 'Please enter a valid number.';
+    }
+  }
+
+  isValidInput(value: number): boolean {
+    return !isNaN(value) && value >= 0;
+  }
+}

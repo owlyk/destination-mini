@@ -1,0 +1,53 @@
+package src.app.fibonacci;
+
+import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
+
+@Component({
+  selector: 'app-fibonacci',
+  templateUrl: './fibonacci.component.html'
+})
+export class FibonacciComponent {
+  fibonacciSeries: number[] = [];
+  errorMessage: string = '';
+
+  constructor(private http: HttpClient) {}
+
+  onSubmit(form: NgForm) {
+    const number = form.value.number;
+    if (form.invalid || !this.isValidInteger(number)) {
+      this.errorMessage = 'Please enter a valid non-negative integer.';
+      return;
+    }
+    this.errorMessage = '';
+    this.getFibonacciSeries(number);
+  }
+
+  isValidInteger(value: any): boolean {
+    return Number.isInteger(value) && value >= 0;
+  }
+
+  getFibonacciSeries(number: number) {
+    this.http.get<number[]>(`/api/fibonacci/${number}`).subscribe(
+      (data) => {
+        this.fibonacciSeries = data;
+      },
+      (error) => {
+        this.errorMessage = 'Error retrieving Fibonacci series. Please try again.';
+      }
+    );
+  }
+}
+
+<div>
+  <form #fibonacciForm="ngForm" (ngSubmit)="onSubmit(fibonacciForm)">
+    <input type="number" name="number" ngModel required min="0">
+    <button type="submit">Submit</button>
+  </form>
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+  <div *ngIf="fibonacciSeries.length > 0">
+    <h3>Fibonacci Series:</h3>
+    <p>{{ fibonacciSeries.join(', ') }}</p>
+  </div>
+</div>

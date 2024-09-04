@@ -1,0 +1,45 @@
+package app.components.fibonacci-calculator;
+
+<input type="number" [(ngModel)]="inputNumber" placeholder="Enter a non-negative integer" aria-label="Fibonacci Input" />
+<button (click)="calculateFibonacci()" [disabled]="inputNumber < 0 || !isValidInput()">Calculate</button>
+<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+<ul>
+  <li *ngFor="let number of fibonacciNumbers">{{ number }}</li>
+</ul>
+
+<script>
+  import { Component } from '@angular/core';
+  import { HttpClient } from '@angular/common/http';
+
+  @Component({
+    selector: 'app-fibonacci-calculator',
+    templateUrl: './fibonacci-calculator.component.html',
+  })
+  export class FibonacciCalculatorComponent {
+    inputNumber: number;
+    fibonacciNumbers: number[] = [];
+    errorMessage: string = '';
+
+    constructor(private http: HttpClient) {}
+
+    isValidInput(): boolean {
+      return this.inputNumber >= 0 && Number.isInteger(this.inputNumber);
+    }
+
+    calculateFibonacci(): void {
+      if (!this.isValidInput()) {
+        this.errorMessage = 'Please enter a non-negative integer.';
+        return;
+      }
+      this.errorMessage = '';
+      this.http.get<number[]>(`/api/fibonacci/${this.inputNumber}`).subscribe(
+        (data) => {
+          this.fibonacciNumbers = data;
+        },
+        (error) => {
+          this.errorMessage = 'Error fetching Fibonacci numbers.';
+        }
+      );
+    }
+  }
+</script>
