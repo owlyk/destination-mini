@@ -1,0 +1,43 @@
+package app;
+
+<div class="container">
+  <h1>Fibonacci Calculator</h1>
+  <form (ngSubmit)="calculateFibonacci()" #fibonacciForm="ngForm">
+    <div class="form-group">
+      <label for="numberInput">Enter a number:</label>
+      <input type="number" id="numberInput" [(ngModel)]="inputNumber" name="inputNumber" required min="0" #inputNumberField="ngModel">
+      <div *ngIf="inputNumberField.invalid && (inputNumberField.dirty || inputNumberField.touched)" class="error">
+        <div *ngIf="inputNumberField.errors?.required">Number is required.</div>
+        <div *ngIf="inputNumberField.errors?.min">Number must be 0 or greater.</div>
+      </div>
+    </div>
+    <button type="submit" [disabled]="fibonacciForm.invalid">Calculate</button>
+  </form>
+  <div *ngIf="result !== null">
+    <h2>Result: {{ result }}</h2>
+  </div>
+</div>
+
+<script>
+import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  inputNumber: number;
+  result: number | null = null;
+
+  calculateFibonacci() {
+    this.result = this.fibonacci(this.inputNumber);
+  }
+
+  fibonacci(n: number): number {
+    if (n <= 1) return n;
+    return this.fibonacci(n - 1) + this.fibonacci(n - 2);
+  }
+}
+</script>

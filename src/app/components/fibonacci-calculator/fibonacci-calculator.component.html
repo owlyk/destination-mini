@@ -1,0 +1,36 @@
+package app.components.fibonacci-calculator;
+
+<input type="number" [(ngModel)]="inputNumber" (ngModelChange)="validateInput()" />
+<button (click)="calculateFibonacci()" [disabled]="!isInputValid">Calculate Fibonacci</button>
+<div *ngIf="!isInputValid" class="error-message">{{ errorMessage }}</div>
+<div *ngIf="fibonacciResult !== null">
+  <p>Fibonacci Result: {{ fibonacciResult }}</p>
+</div>
+
+export class FibonacciCalculatorComponent {
+  inputNumber: number;
+  isInputValid: boolean = true;
+  errorMessage: string = '';
+  fibonacciResult: number | null = null;
+
+  validateInput() {
+    if (this.inputNumber === undefined || this.inputNumber < 0 || !Number.isInteger(this.inputNumber)) {
+      this.isInputValid = false;
+      this.errorMessage = 'Please enter a valid non-negative integer.';
+    } else {
+      this.isInputValid = true;
+      this.errorMessage = '';
+    }
+  }
+
+  calculateFibonacci() {
+    if (this.isInputValid) {
+      this.fibonacciResult = this.fibonacci(this.inputNumber);
+    }
+  }
+
+  fibonacci(n: number): number {
+    if (n <= 1) return n;
+    return this.fibonacci(n - 1) + this.fibonacci(n - 2);
+  }
+}

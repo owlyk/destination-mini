@@ -1,0 +1,15 @@
+package
+
+<form (ngSubmit)="onSubmit()" #userInputForm="ngForm">
+  <div>
+    <label for="inputValue">Enter Value:</label>
+    <input type="text" id="inputValue" [(ngModel)]="inputValue" name="inputValue" required>
+    <div *ngIf="userInputForm.submitted && !inputValue" class="error-message">
+      Input is required.
+    </div>
+  </div>
+  <button type="submit">Submit</button>
+  <div *ngIf="submitted && !inputValue" class="error-message">
+    Please enter a valid value.
+  </div>
+</form>

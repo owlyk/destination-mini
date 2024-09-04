@@ -1,0 +1,67 @@
+package fib;
+
+.header {
+    margin: 20px;
+    padding: 10px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.paragraph {
+    margin: 15px;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .header {
+        font-size: 20px;
+    }
+
+    .paragraph {
+        font-size: 14px;
+    }
+
+    .link {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+    .header {
+        font-size: 22px;
+    }
+
+    .paragraph {
+        font-size: 18px;
+    }
+
+    .link {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 1201px) {
+    .header {
+        font-size: 26px;
+    }
+
+    .paragraph {
+        font-size: 20px;
+    }
+
+    .link {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,33 @@
+package src.fib;
+
+import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+
+@Component({
+  selector: 'app-fib',
+  template: `
+    <h1>Start Page</h1>
+    <p>Hello! Would you like to calculate</p>
+    <a routerLink="fib">Fibonacci numbers</a>
+  `,
+  styles: [`
+    h1 {
+      font-size: 2em;
+      text-align: center;
+    }
+    p {
+      text-align: center;
+    }
+    a {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+  `]
+})
+export class FibComponent {
+  constructor(private titleService: Title) {
+    this.titleService.setTitle('Fibonacci Calculation');
+  }
+}

@@ -1,0 +1,45 @@
+package app.components.test-script;
+
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-test-script',
+  templateUrl: './test-script.component.html',
+})
+export class TestScriptComponent {
+  fibonacciInput: number;
+  errorMessage: string;
+  fibonacciResult: string;
+
+  generateFibonacci() {
+    this.errorMessage = '';
+    this.fibonacciResult = '';
+
+    if (!this.isValidInput(this.fibonacciInput)) {
+      this.errorMessage = 'Please enter a positive integer.';
+      return;
+    }
+
+    this.fibonacciResult = this.calculateFibonacci(this.fibonacciInput).join(', ');
+  }
+
+  isValidInput(input: number): boolean {
+    return Number.isInteger(input) && input > 0;
+  }
+
+  calculateFibonacci(n: number): number[] {
+    const result = [];
+    let a = 0, b = 1;
+    for (let i = 0; i < n; i++) {
+      result.push(a);
+      [a, b] = [b, a + b];
+    }
+    return result;
+  }
+}
+
+<input type="number" [(ngModel)]="fibonacciInput" placeholder="Enter number of terms" />
+<button (click)="generateFibonacci()">Generate Fibonacci</button>
+<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+<div *ngIf="fibonacciResult" class="result">{{ fibonacciResult }}</div>
