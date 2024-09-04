@@ -1,0 +1,26 @@
+package error-message;
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid red;
+    background-color: #ffe6e6;
+    border-radius: 5px;
+}
+
+.fibonacci-input {
+    margin: 20px 0;
+}
+
+.fibonacci-button {
+    padding: 10px 15px;
+    font-size: 1em;
+}
+
+.fibonacci-result {
+    margin-top: 20px;
+    font-size: 1.2em;
+}

@@ -1,0 +1,44 @@
+package app.components.fibonacci-calculator;
+
+<input type="number" id="fibonacciInput" placeholder="Enter a non-negative integer" />
+<button id="submitButton" onclick="calculateFibonacci()">Calculate Fibonacci</button>
+<div id="fibonacciList"></div>
+<div id="errorMessage" style="color: red;"></div>
+<div id="successMessage" style="color: green;"></div>
+
+<script>
+    function calculateFibonacci() {
+        const input = document.getElementById('fibonacciInput').value;
+        const errorMessage = document.getElementById('errorMessage');
+        const fibonacciList = document.getElementById('fibonacciList');
+        const successMessage = document.getElementById('successMessage');
+        errorMessage.innerText = '';
+        fibonacciList.innerHTML = '';
+        successMessage.innerText = '';
+
+        const number = parseInt(input);
+        if (isNaN(number) || number < 0) {
+            errorMessage.innerText = 'Please enter a valid non-negative integer.';
+            return;
+        }
+
+        fetch(`/api/fibonacci?number=${number}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.fibonacci) {
+                    fibonacciList.innerHTML = data.fibonacci.join(', ');
+                    successMessage.innerText = 'Fibonacci numbers calculated successfully.';
+                } else {
+                    errorMessage.innerText = 'Error retrieving Fibonacci numbers.';
+                }
+            })
+            .catch(() => {
+                errorMessage.innerText = 'Error connecting to the server.';
+            });
+    }
+</script>

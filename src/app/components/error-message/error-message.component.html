@@ -1,0 +1,28 @@
+package app.components.error-message;
+
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-error-message',
+  templateUrl: './error-message.component.html',
+  styleUrls: ['./error-message.component.css']
+})
+export class ErrorMessageComponent {
+  @Input() errorMessage: string;
+}
+
+<div class="error-message" *ngIf="errorMessage">
+    <p>{{ errorMessage }}</p>
+</div>
+
+<style>
+.error-message {
+    color: red;
+    font-weight: bold;
+    border: 1px solid red;
+    background-color: #f8d7da;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+</style>
