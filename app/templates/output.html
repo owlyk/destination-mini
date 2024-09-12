@@ -1,0 +1,29 @@
+from flask import Flask, render_template_string
+
+app = Flask(__name__)
+
+template = """
+<html>
+<head>
+    <title>Fibonacci Numbers</title>
+</head>
+<body>
+    <h1>Fibonacci Numbers web app</h1>
+    <p><font size="3" color="red">{{ msg }}</font></p>
+    <p>First {{ num }} Fibonacci numbers:</p>
+    <p>{{ list }}</p>
+</body>
+</html>
+"""
+
+@app.route("/")
+def index():
+    msg = "Welcome to the Fibonacci Numbers web app!"
+    num = 10
+    fib_list = [0, 1]
+    while len(fib_list) < num:
+        fib_list.append(fib_list[-1] + fib_list[-2])
+    return render_template_string(template, msg=msg, num=num, list=fib_list)
+
+if __name__ == "__main__":
+    app.run()
