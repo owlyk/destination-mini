@@ -1,0 +1,15 @@
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    msg = "Hello, World!"
+    num = 10
+    fibonacci_numbers = [0, 1]
+    while len(fibonacci_numbers) < num:
+        fibonacci_numbers.append(fibonacci_numbers[-1] + fibonacci_numbers[-2])
+    return render_template("output.html", msg=msg, num=num, list=fibonacci_numbers)
+
+if __name__ == "__main__":
+    app.run()
