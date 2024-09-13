@@ -1,0 +1,28 @@
+from jinja2 import Template
+
+def fibonacci(n):
+    fib_sequence = [0, 1]
+    while len(fib_sequence) < n:
+        fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
+    return fib_sequence
+
+n = 10
+fib_list = fibonacci(n)
+msg = "Fibonacci numbers generated successfully!"
+
+template = Template("""
+<html>
+<head>
+    <title>Fibonacci Numbers</title>
+</head>
+<body>
+    <h1>Fibonacci Numbers web app</h1>
+    <p><font size="3" color="red">{{ msg }}</font></p>
+    <p>First {{ num }} Fibonacci numbers:</p>
+    <p>{{ list }}</p>
+</body>
+</html>
+""")
+
+output = template.render(msg=msg, num=n, list=fib_list)
+print(output)
